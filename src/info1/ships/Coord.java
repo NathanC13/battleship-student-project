@@ -8,6 +8,8 @@ package info1.ships;
 public class Coord implements ICoord {
 
     // TODO
+    private String x;
+    private String y;
 
     /**
      * NB : LA SIGNATURE DU CONSTRUCTEUR DOIT ETRE RESPECTEE
@@ -18,41 +20,67 @@ public class Coord implements ICoord {
      */
     public Coord(String xy) throws BadCoordException {
         // TODO
+        
+        if ((xy.charAt(0)-64) < 1 || (xy.charAt(0)-64) > 10){
+            throw new BadCoordException();
+        }
+
+        String y = xy.substring(1);
+
+        if (Integer.parseInt(y) > 10 || Integer.parseInt(y) < 1){
+            throw new BadCoordException();
+        }
+
+        this.x = xy.substring(0,1);
+        this.y = xy.substring(1);
     }
 
     @Override
     public char getAlphaX() {
         // TODO
-        return 'x';
+	return this.x.charAt(0);
     }
 
     @Override
     public int getX() {
         // TODO
-        return -1;
+        return this.x.charAt(0) - 64;
     }
 
     @Override
     public int getY() {
         // TODO
-        return -1;
+        return Integer.parseInt(this.y);
     }
 
     @Override
     public String toString() {
         // TODO
-        return "" ;
+        return this.x + "" + this.y ;
     }
 
     @Override
     public boolean equals(Object o) {
         // TODO
+        if ((o!=null) && (o.getClass()==getClass())){
+            Coord coord = (Coord) o;
+
+            if (coord.x.equals(this.x) && coord.y.equals(this.y)){
+                return true;
+            }
+
+        }
+
         return false;
     }
 
     @Override
     public int hashCode() {
         // TODO
-        return -1;
+        
+        int hash =1;
+        hash = hash * 17 + Integer.parseInt(this.y);
+        hash = hash * 31 + (this.x.charAt(0) - 64);
+        return hash;
     }
 }
