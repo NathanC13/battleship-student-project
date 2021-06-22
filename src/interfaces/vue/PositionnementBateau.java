@@ -101,12 +101,18 @@ public class PositionnementBateau extends JFrame {
         haut.add(panel1, BorderLayout.NORTH);
         haut.add(placement);
 
+        Icon IconBateau1 = new ImageIcon("./img/bateau_1case.png");
+        JButton bateau1 = new JButton(IconBateau1);
+        Icon IconBateau2 = new ImageIcon("./img/bateau_2cases.png");
+        JButton bateau2 = new JButton(IconBateau2);
+        Icon IconBateau3 = new ImageIcon("./img/bateau_3cases.png");
+        JButton bateau3 = new JButton(IconBateau3);
+        Icon IconBateau4 = new ImageIcon("./img/bateau_4cases.png");
+        JButton bateau4 = new JButton(IconBateau4);
+        Icon IconBateau5 = new ImageIcon("./img/bateau_5cases.png");
+        JButton bateau5 = new JButton(IconBateau5);
 
-        JButton bateau1 = new JButton("bateau1");
-        JButton bateau2 = new JButton("bateau2");
-        JButton bateau3 = new JButton("bateau3");
-        JButton bateau4 = new JButton("bateau4");
-        JButton bateau5 = new JButton("bateau5");
+
 
         JTextField pseudo = new JTextField("");
         JLabel espace = new JLabel();
@@ -141,7 +147,7 @@ public class PositionnementBateau extends JFrame {
         principal.add(haut, BorderLayout.NORTH);
         principal.add(jeuGauche, BorderLayout.CENTER);
 
-        this.setResizable(false);
+        //this.setResizable(false);
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         this.setPreferredSize(new Dimension(700,650));
         this.setContentPane(principal);
