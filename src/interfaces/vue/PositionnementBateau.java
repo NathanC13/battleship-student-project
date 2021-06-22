@@ -125,4 +125,8 @@ public class PositionnementBateau extends JFrame {
     public void fixeListenerPlay(ActionListener action){
         jouer.addActionListener(action);
     }
+
+    public void fixeListenerHelp(ActionListener action){
+        bouton2.addActionListener(action);
+    }
 }

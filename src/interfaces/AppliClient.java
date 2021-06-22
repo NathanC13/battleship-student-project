@@ -2,6 +2,7 @@ package interfaces;
 
 import interfaces.controleurs.menu.NewGameControleur;
 import interfaces.controleurs.menu.QuitterControleur;
+import interfaces.controleurs.positionnementBateau.HelpControleur;
 import interfaces.controleurs.positionnementBateau.PlayGameControleur;
 import interfaces.controleurs.positionnementBateau.SettingsControleur;
 import interfaces.controleurs.settings.BackControleur;
@@ -27,6 +28,8 @@ public class AppliClient {
         positionnementBateau.fixeListenerSettings(settingsControleur);
         PlayGameControleur playGameControleur = new PlayGameControleur(positionnementBateau, plateau);
         positionnementBateau.fixeListenerPlay(playGameControleur);
+        HelpControleur helpControleur = new HelpControleur();
+        positionnementBateau.fixeListenerHelp(helpControleur);
 
 
         BackControleur backControleur = new BackControleur(settings);
