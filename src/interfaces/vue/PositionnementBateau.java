@@ -14,10 +14,15 @@ public class PositionnementBateau extends JFrame {
     public PositionnementBateau(String titre){
         super (titre);
 
-
         JPanel principal = new JPanel();
 
         principal.setLayout(new BorderLayout());
+
+
+
+        JPanel jeuGauche = new JPanel();
+
+        jeuGauche.setLayout(new BorderLayout());
 
         JPanel jeu1 = new JPanel();
         jeu1.setLayout(new GridLayout(10,10));
@@ -36,22 +41,54 @@ public class PositionnementBateau extends JFrame {
             }
         }
 
-        JLabel text = new JLabel("Choisir l'emplacement de ses bateaux");
-        principal.add(text, BorderLayout.SOUTH);
-
-        JButton button = new JButton("bouton");
-        JButton button1 = new JButton("bouton1");
-        JLabel labelTop = new JLabel("topLabel");
+        JPanel panelJouer = new JPanel(new FlowLayout());
 
 
-        JPanel test = new JPanel(new FlowLayout());
-        test.add(jeu1);
+        JPanel panelSettings = new JPanel(new FlowLayout());
+        JButton settings = new JButton("Settings");
+        panelSettings.add(settings);
 
-        principal.add(button, BorderLayout.EAST);
-        principal.add(button1, BorderLayout.WEST);
-        principal.add(labelTop, BorderLayout.NORTH);
-        principal.add(jeu1, BorderLayout.CENTER);
+        JPanel placement = new JPanel();
+        JLabel placerBateau = new JLabel("Placez vos Bateaux !");
+        placement.add(placerBateau);
 
+        JPanel haut = new JPanel(new BorderLayout());
+        haut.add(panelSettings, BorderLayout.NORTH);
+        haut.add(placement);
+
+
+        JButton bateau1 = new JButton("bateau1");
+        JButton bateau2 = new JButton("bateau2");
+        JButton bateau3 = new JButton("bateau3");
+        JButton bateau4 = new JButton("bateau4");
+        JButton bateau5 = new JButton("bateau5");
+
+
+        JPanel selectBateau = new JPanel(new GridLayout(7,1));
+        selectBateau.add(bateau1);
+        selectBateau.add(bateau2);
+        selectBateau.add(bateau3);
+        selectBateau.add(bateau4);
+        selectBateau.add(bateau5);
+
+        JPanel bas = new JPanel(new BorderLayout());
+        JButton jouer = new JButton("JOUER");
+        JPanel bas1 = new JPanel(new FlowLayout());
+        bas1.add(jouer);
+        bas.add(bas1, BorderLayout.CENTER);
+        JButton clear = new JButton("clear");
+        bas.add(clear, BorderLayout.EAST);
+
+
+        jeuGauche.add(panelJouer, BorderLayout.SOUTH);
+
+        jeuGauche.add(jeu1, BorderLayout.CENTER);
+
+
+        principal.add(bas, BorderLayout.SOUTH);
+        principal.add(selectBateau, BorderLayout.EAST);
+        principal.add(haut, BorderLayout.NORTH);
+        principal.add(jeuGauche, BorderLayout.CENTER);
 
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         this.setPreferredSize(new Dimension(700,650));
