@@ -1,14 +1,9 @@
 package interfaces.vue;
 
-import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
-import java.awt.image.BufferedImage;
-import java.awt.image.ImageObserver;
-import java.io.File;
-import java.io.IOException;
-import java.util.Objects;
+import java.util.ArrayList;
 
 public class PositionnementBateau extends JFrame {
 
@@ -16,9 +11,12 @@ public class PositionnementBateau extends JFrame {
     private JButton jouer;
     private JButton bouton1;
     private JButton bouton2;
+    private ArrayList<ImageShowingComponent> caseList;
 
     public PositionnementBateau(String titre){
         super (titre);
+
+        this.caseList = new ArrayList<>();
 
         JPanel principal = new JPanel();
 
@@ -68,7 +66,8 @@ public class PositionnementBateau extends JFrame {
             jeu1.add(new JLabel(text));
             for (int y=0; y<10; y++){
 
-                ImageShowingComponent img = new ImageShowingComponent(id);
+                ImageShowingComponent img = new ImageShowingComponent(id, this);
+                caseList.add(img);
 
                 jeu1.add(img);
                 id++;
@@ -170,5 +169,9 @@ public class PositionnementBateau extends JFrame {
 
     public void fixeListenerClear(ActionListener action){
         clear.addActionListener(action);
+    }
+
+    public ArrayList<ImageShowingComponent> getCaselist(){
+        return this.caseList;
     }
 }
