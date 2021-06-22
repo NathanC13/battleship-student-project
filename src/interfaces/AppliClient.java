@@ -2,6 +2,7 @@ package interfaces;
 
 import interfaces.controleurs.menu.NewGameControleur;
 import interfaces.controleurs.menu.QuitterControleur;
+import interfaces.controleurs.positionnementBateau.PlayGameControleur;
 import interfaces.controleurs.positionnementBateau.SettingsControleur;
 import interfaces.controleurs.settings.BackControleur;
 import interfaces.controleurs.settings.QuitterSettingsControleur;
@@ -14,6 +15,7 @@ public class AppliClient {
         Menu fenetre = new Menu("test");
         PositionnementBateau positionnementBateau = new PositionnementBateau("test");
         Settings settings = new Settings("test");
+        Plateau plateau = new Plateau("test");
 
         QuitterControleur quitterControleur = new QuitterControleur(fenetre);
         fenetre.fixeListenerQuitter(quitterControleur);
@@ -23,6 +25,8 @@ public class AppliClient {
 
         SettingsControleur settingsControleur = new SettingsControleur(positionnementBateau, settings);
         positionnementBateau.fixeListenerSettings(settingsControleur);
+        PlayGameControleur playGameControleur = new PlayGameControleur(positionnementBateau, plateau);
+        positionnementBateau.fixeListenerPlay(playGameControleur);
 
 
         BackControleur backControleur = new BackControleur(settings);
@@ -35,6 +39,7 @@ public class AppliClient {
 
 
 
+        plateau.pack();
         settings.pack();
         positionnementBateau.pack();
         fenetre.pack();

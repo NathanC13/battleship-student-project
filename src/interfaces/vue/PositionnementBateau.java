@@ -12,6 +12,7 @@ import java.util.Objects;
 
 public class PositionnementBateau extends JFrame {
 
+    private JButton jouer;
     private JButton bouton1;
     private JButton bouton2;
 
@@ -92,7 +93,7 @@ public class PositionnementBateau extends JFrame {
 
 
         JPanel bas = new JPanel(new BorderLayout());
-        JButton jouer = new JButton("JOUER");
+        jouer = new JButton("JOUER");
         JPanel bas1 = new JPanel(new FlowLayout());
         bas1.add(jouer);
         bas.add(bas1, BorderLayout.CENTER);
@@ -121,4 +122,7 @@ public class PositionnementBateau extends JFrame {
         bouton1.addActionListener(action);
     }
 
+    public void fixeListenerPlay(ActionListener action){
+        jouer.addActionListener(action);
+    }
 }
