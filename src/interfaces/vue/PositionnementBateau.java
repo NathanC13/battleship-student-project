@@ -73,13 +73,19 @@ public class PositionnementBateau extends JFrame {
         JButton bateau4 = new JButton("bateau4");
         JButton bateau5 = new JButton("bateau5");
 
+        JTextField pseudo = new JTextField("Entrez votre pseudo");
+        JLabel espace = new JLabel();
 
-        JPanel selectBateau = new JPanel(new GridLayout(7,1));
+        JPanel selectBateau = new JPanel(new GridLayout(8,1));
+
+        selectBateau.add(pseudo);
+        selectBateau.add(espace);
         selectBateau.add(bateau1);
         selectBateau.add(bateau2);
         selectBateau.add(bateau3);
         selectBateau.add(bateau4);
         selectBateau.add(bateau5);
+
 
         JPanel bas = new JPanel(new BorderLayout());
         JButton jouer = new JButton("JOUER");
