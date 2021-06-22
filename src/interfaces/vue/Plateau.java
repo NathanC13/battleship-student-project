@@ -14,16 +14,11 @@ public class Plateau extends JFrame{
         plateau.setLayout(new BorderLayout());
 
         JPanel nord = new JPanel();
-        nord.setLayout(new FlowLayout(FlowLayout.LEFT));
+        nord.setLayout(new FlowLayout(FlowLayout.RIGHT));
 
-        JComboBox<String> combo = new JComboBox<>();
-        combo.addItem("Game");
-        combo.addItem("Restart");
-        combo.addItem("Quitter");
         JButton setting = new JButton("Setting");
         JButton help = new JButton("Help");
 
-        nord.add(combo);
         nord.add(setting);
         nord.add(help);
 
