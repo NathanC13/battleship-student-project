@@ -50,6 +50,7 @@ public class Menu extends JFrame {
         //ajout des panels aux panel principal
         menuprincipal.add(panel1,BorderLayout.SOUTH);
         menuprincipal.add(panel2,BorderLayout.NORTH);
+        //
 
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         this.setPreferredSize(new Dimension(700,500));
