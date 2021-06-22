@@ -4,9 +4,15 @@ package interfaces.vue;
 import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
+import java.awt.event.ActionListener;
 
 
 public class Plateau extends JFrame{
+
+
+    private JButton help;
+    private JButton setting;
+
     public Plateau(String titre){
         super(titre);
 
@@ -16,8 +22,8 @@ public class Plateau extends JFrame{
         JPanel nord = new JPanel();
         nord.setLayout(new FlowLayout(FlowLayout.RIGHT));
 
-        JButton setting = new JButton("Setting");
-        JButton help = new JButton("Help");
+        setting = new JButton("Setting");
+        help = new JButton("Help");
 
         nord.add(setting);
         nord.add(help);
@@ -82,5 +88,13 @@ public class Plateau extends JFrame{
         this.setContentPane(plateau);
 
 
+    }
+
+    public void fixeListenerSettings(ActionListener action){
+        setting.addActionListener(action);
+    }
+
+    public void fixeListenerHelp(ActionListener action){
+        help.addActionListener(action);
     }
 }

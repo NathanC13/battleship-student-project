@@ -44,6 +44,10 @@ public class AppliClient {
         settings.fixeListenerQuitter(quitterSettingsControleur);
 
 
+        plateau.fixeListenerSettings(settingsControleur);
+        plateau.fixeListenerHelp(helpControleur);
+
+
 
 
         plateau.pack();
