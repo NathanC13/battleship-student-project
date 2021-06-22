@@ -31,13 +31,41 @@ public class PositionnementBateau extends JFrame {
         jeuGauche.setLayout(new BorderLayout());
 
         JPanel jeu1 = new JPanel();
-        jeu1.setLayout(new GridLayout(10,10));
+        jeu1.setLayout(new GridLayout(11,11));
 
 
+
+        JLabel labelA = new JLabel("A");
+        JLabel labelB = new JLabel("B");
+        JLabel labelC = new JLabel("C");
+        JLabel labelD = new JLabel("D");
+        JLabel labelE = new JLabel("E");
+        JLabel labelF = new JLabel("F");
+        JLabel labelG = new JLabel("G");
+        JLabel labelH = new JLabel("H");
+        JLabel labelI = new JLabel("I");
+        JLabel labelJ = new JLabel("J");
+        JLabel labelvide = new JLabel("");
+
+
+        jeu1.add(labelA);
+        jeu1.add(labelB);
+        jeu1.add(labelC);
+        jeu1.add(labelD);
+        jeu1.add(labelE);
+        jeu1.add(labelF);
+        jeu1.add(labelG);
+        jeu1.add(labelH);
+        jeu1.add(labelI);
+        jeu1.add(labelJ);
+        jeu1.add(labelvide);
 
         int id = 1;
 
         for (int x=0; x<10; x++){
+            String text = new String();
+            text = String.valueOf(x+1);
+            jeu1.add(new JLabel(text));
             for (int y=0; y<10; y++){
 
                 ImageShowingComponent img = new ImageShowingComponent(id);
@@ -45,6 +73,7 @@ public class PositionnementBateau extends JFrame {
                 jeu1.add(img);
                 id++;
             }
+
         }
 
         JPanel panelJouer = new JPanel(new FlowLayout());
