@@ -1,13 +1,13 @@
 package interfaces;
 
-import interfaces.vue.menu;
+import interfaces.vue.Menu;
 
 import javax.swing.*;
+import java.awt.event.*;
 
 public class AppliClient {
     public static void main(String[] args) {
-        menu fenetre1 = new menu("BattleShip BeeYard Edition");
-
+        Menu fenetre1 = new Menu("BattleShip BeeYard Edition");
 
 
 
