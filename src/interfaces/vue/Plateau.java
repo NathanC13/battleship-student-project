@@ -39,11 +39,40 @@ public class Plateau extends JFrame{
         sud.add(texte1);
         sud.add(texte3);
 
+        JPanel east = new JPanel();
+        east.setLayout(new GridLayout(10,10));
+        int id = 1;
+
+        for (int x=0; x<10; x++){
+            for (int y=0; y<10; y++){
+
+                ImageShowingComponent img = new ImageShowingComponent(id);
+
+                east.add(img);
+                id++;
+            }
+        }
+        JPanel center =  new JPanel();
+        center.setLayout(new GridLayout(10,10));
+        int id1 = 1;
+
+        for (int x=0; x<10; x++){
+            for (int y=0; y<10; y++){
+
+                ImageShowingComponent img = new ImageShowingComponent(id1);
+
+                center.add(img);
+                id1++;
+            }
+        }
+
 
 
 
         plateau.add((sud),BorderLayout.SOUTH);
         plateau.add(nord,BorderLayout.NORTH);
+        plateau.add(east,BorderLayout.EAST);
+        plateau.add(center,BorderLayout.WEST);
 
 
 
