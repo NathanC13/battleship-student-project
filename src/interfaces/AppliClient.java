@@ -34,6 +34,7 @@ public class AppliClient {
 
 
 
+
         settings.pack();
         positionnementBateau.pack();
         fenetre.pack();

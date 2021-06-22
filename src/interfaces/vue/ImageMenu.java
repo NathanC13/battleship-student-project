@@ -17,7 +17,7 @@ public class ImageMenu extends JComponent {
 
 
         try {
-            img = ImageIO.read(new File("/home/E205434Y/IdeaProjects/battleship-student-project-2021/img/logo_reduit.png"));
+            img = ImageIO.read(new File("./img/logo_reduit.png"));
 
         } catch (IOException e) {
             e.printStackTrace();

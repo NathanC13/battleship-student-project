@@ -3,10 +3,15 @@ package interfaces.vue;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
 
 public class Menu extends JFrame {
+
+    private JButton bouton0;
+    private JButton bouton1;
+    private JButton bouton2;
 
     public Menu(String titre){
         super(titre);
@@ -19,18 +24,18 @@ public class Menu extends JFrame {
         JPanel panel1 = new JPanel(new BorderLayout());
         JPanel panel11 = new JPanel(new FlowLayout(FlowLayout.CENTER));
         JPanel panel12 = new JPanel(new FlowLayout(FlowLayout.RIGHT));
-        JButton boutou0 = new JButton("Informations");
+        this.bouton0 = new JButton("Informations");
         panel12.setBackground(Color.GRAY);
-        panel12.add(boutou0);
+        panel12.add(bouton0);
         panel1.add(panel12,BorderLayout.NORTH);
-        JButton bouton1 = new JButton("Nouvelle partie");
+        bouton1 = new JButton("Nouvelle partie");
         panel11.add(bouton1);
         panel1.add(panel11,BorderLayout.SOUTH);
 
         //panel borderlayout de la partie sud
         JPanel panel2 = new JPanel(new BorderLayout());
         JPanel panel22 = new JPanel(new FlowLayout(FlowLayout.CENTER));
-        JButton bouton2 = new JButton("Quitter");
+        bouton2 = new JButton("Quitter");
         panel22.add(bouton2);
         panel2.add(panel22);
 
@@ -57,16 +62,11 @@ public class Menu extends JFrame {
         this.setContentPane(menuprincipal);
     }
 
-    /*
-    public void paint(Graphics g){
-        Image image = null;
-        try {
-            image = ImageIO.read(new File("/home/E205434Y/IdeaProjects/battleship-student-project-2021/img/img1.jpg"));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        g.drawImage(image,0,0,null);
-
+    public void fixeListenerQuitter(ActionListener action){
+        bouton2.addActionListener(action);
     }
-    */
+
+    public void fixeListenerNewGame(ActionListener action){
+        bouton1.addActionListener(action);
+    }
 }

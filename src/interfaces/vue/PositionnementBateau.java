@@ -3,6 +3,7 @@ package interfaces.vue;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.awt.image.ImageObserver;
 import java.io.File;
@@ -10,6 +11,9 @@ import java.io.IOException;
 import java.util.Objects;
 
 public class PositionnementBateau extends JFrame {
+
+    private JButton bouton1;
+    private JButton bouton2;
 
     public PositionnementBateau(String titre){
         super (titre);
@@ -47,8 +51,8 @@ public class PositionnementBateau extends JFrame {
 
         JPanel panel1 = new JPanel(new BorderLayout());
         JPanel panel2 = new JPanel(new FlowLayout());
-        JButton bouton1 = new JButton("Settings");
-        JButton bouton2 = new JButton("Help");
+        bouton1 = new JButton("Settings");
+        bouton2 = new JButton("Help");
         panel2.add(bouton1);
         panel2.add(bouton2);
         panel1.add(panel2,BorderLayout.EAST);
@@ -111,6 +115,10 @@ public class PositionnementBateau extends JFrame {
         this.setPreferredSize(new Dimension(700,650));
         this.setContentPane(principal);
 
+    }
+
+    public void fixeListenerSettings(ActionListener action){
+        bouton1.addActionListener(action);
     }
 
 }
