@@ -26,7 +26,7 @@ public class ImageShowingComponent extends JComponent {
 
 
         try {
-            img = ImageIO.read(new File("/home/clem/Documents/PROJET/real/battleship-student-project-2021/img/case_mer.jpg"));
+            img = ImageIO.read(new File("./img/case_mer.jpg"));
 
         } catch (IOException e) {
             e.printStackTrace();

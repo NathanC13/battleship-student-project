@@ -17,7 +17,7 @@ public class ImageFin extends JComponent {
 
 
         try {
-            img = ImageIO.read(new File("/home/clem/Documents/PROJET/real/battleship-student-project-2021/img/img1.jpg"));
+            img = ImageIO.read(new File("./img/img1.jpg"));
 
         } catch (IOException e) {
             e.printStackTrace();
