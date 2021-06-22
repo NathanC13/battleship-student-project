@@ -44,16 +44,26 @@ public class PositionnementBateau extends JFrame {
         JPanel panelJouer = new JPanel(new FlowLayout());
 
 
-        JPanel panelSettings = new JPanel(new FlowLayout());
-        JButton settings = new JButton("Settings");
-        panelSettings.add(settings);
+
+        JPanel panel1 = new JPanel(new BorderLayout());
+        JPanel panel2 = new JPanel(new FlowLayout());
+        JButton bouton1 = new JButton("Settings");
+        JButton bouton2 = new JButton("Help");
+        panel2.add(bouton1);
+        panel2.add(bouton2);
+        panel1.add(panel2,BorderLayout.EAST);
+
+
+
+
+
 
         JPanel placement = new JPanel();
         JLabel placerBateau = new JLabel("Placez vos Bateaux !");
         placement.add(placerBateau);
 
         JPanel haut = new JPanel(new BorderLayout());
-        haut.add(panelSettings, BorderLayout.NORTH);
+        haut.add(panel1, BorderLayout.NORTH);
         haut.add(placement);
 
 
@@ -90,6 +100,7 @@ public class PositionnementBateau extends JFrame {
         principal.add(haut, BorderLayout.NORTH);
         principal.add(jeuGauche, BorderLayout.CENTER);
 
+        this.setResizable(false);
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         this.setPreferredSize(new Dimension(700,650));
         this.setContentPane(principal);
