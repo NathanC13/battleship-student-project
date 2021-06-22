@@ -12,6 +12,7 @@ import java.util.Objects;
 
 public class PositionnementBateau extends JFrame {
 
+    private JButton clear;
     private JButton jouer;
     private JButton bouton1;
     private JButton bouton2;
@@ -78,7 +79,7 @@ public class PositionnementBateau extends JFrame {
         JButton bateau4 = new JButton("bateau4");
         JButton bateau5 = new JButton("bateau5");
 
-        JTextField pseudo = new JTextField("Entrez votre pseudo");
+        JTextField pseudo = new JTextField("");
         JLabel espace = new JLabel();
 
         JPanel selectBateau = new JPanel(new GridLayout(8,1));
@@ -97,7 +98,7 @@ public class PositionnementBateau extends JFrame {
         JPanel bas1 = new JPanel(new FlowLayout());
         bas1.add(jouer);
         bas.add(bas1, BorderLayout.CENTER);
-        JButton clear = new JButton("clear");
+        clear = new JButton("clear");
         bas.add(clear, BorderLayout.EAST);
 
 
@@ -128,5 +129,9 @@ public class PositionnementBateau extends JFrame {
 
     public void fixeListenerHelp(ActionListener action){
         bouton2.addActionListener(action);
+    }
+
+    public void fixeListenerClear(ActionListener action){
+        clear.addActionListener(action);
     }
 }

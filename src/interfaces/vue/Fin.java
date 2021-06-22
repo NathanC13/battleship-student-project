@@ -20,7 +20,7 @@ public class Fin extends JFrame {
 
 
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        this.setPreferredSize(new Dimension(845,555));
+        this.setPreferredSize(new Dimension(720,420));
         this.setContentPane(principal);
         this.setResizable(false);
     }

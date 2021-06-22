@@ -2,6 +2,7 @@ package interfaces;
 
 import interfaces.controleurs.menu.NewGameControleur;
 import interfaces.controleurs.menu.QuitterControleur;
+import interfaces.controleurs.positionnementBateau.ClearControleur;
 import interfaces.controleurs.positionnementBateau.HelpControleur;
 import interfaces.controleurs.positionnementBateau.PlayGameControleur;
 import interfaces.controleurs.positionnementBateau.SettingsControleur;
@@ -12,6 +13,7 @@ import interfaces.vue.*;
 
 public class AppliClient {
     public static void main(String[] args) {
+
 
         Menu fenetre = new Menu("test");
         PositionnementBateau positionnementBateau = new PositionnementBateau("test");
@@ -30,6 +32,8 @@ public class AppliClient {
         positionnementBateau.fixeListenerPlay(playGameControleur);
         HelpControleur helpControleur = new HelpControleur();
         positionnementBateau.fixeListenerHelp(helpControleur);
+        ClearControleur clearControleur = new ClearControleur();
+        positionnementBateau.fixeListenerClear(clearControleur);
 
 
         BackControleur backControleur = new BackControleur(settings);
