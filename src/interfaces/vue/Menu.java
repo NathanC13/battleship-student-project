@@ -77,4 +77,7 @@ public class Menu extends JFrame {
     public void fixeListenerNewGame(ActionListener action){
         bouton1.addActionListener(action);
     }
+    public void fixeListenerInformation(ActionListener action){
+        bouton0.addActionListener(action); //oui
+    }
 }
