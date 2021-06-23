@@ -7,6 +7,7 @@ import java.util.ArrayList;
 
 public class PositionnementBateau extends JFrame {
 
+    private JTextField pseudo;
     private JButton bateau1;
     private JButton bateau2;
     private JButton bateau3;
@@ -120,7 +121,7 @@ public class PositionnementBateau extends JFrame {
 
 
 
-        JTextField pseudo = new JTextField("");
+        pseudo = new JTextField("");
         pseudo.setToolTipText("Entrez votre pseudo : ");
         pseudo.setBorder(BorderFactory.createTitledBorder("Entrez votre pseudo :"));
         JLabel espace = new JLabel();
@@ -237,5 +238,9 @@ public class PositionnementBateau extends JFrame {
 
     public JButton getBateau5() {
         return bateau5;
+    }
+
+    public String getPseudo() {
+        return pseudo.getText();
     }
 }
