@@ -1,15 +1,15 @@
 package interfaces.controleurs.menu;
 
-import interfaces.vue.Menu;
+import interfaces.vue.MenuPrincipal;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class QuitterControleur implements ActionListener {
     
-    private Menu fenetre;
+    private MenuPrincipal fenetre;
     
-    public QuitterControleur(Menu fenetre){
+    public QuitterControleur(MenuPrincipal fenetre){
         this.fenetre = fenetre;
     }
     

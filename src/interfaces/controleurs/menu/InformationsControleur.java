@@ -1,6 +1,6 @@
 package interfaces.controleurs.menu;
 
-import interfaces.vue.Menu;
+import interfaces.vue.MenuPrincipal;
 import interfaces.vue.PositionnementBateau;
 
 import javax.swing.*;
@@ -9,10 +9,10 @@ import java.awt.event.ActionListener;
 
 public class    InformationsControleur implements ActionListener {
 
-    private Menu fenetre;
+    private MenuPrincipal fenetre;
     private PositionnementBateau fenetreBateau;
 
-    public InformationsControleur(Menu fenetre){
+    public InformationsControleur(MenuPrincipal fenetre){
         this.fenetre = fenetre;
     }
 
