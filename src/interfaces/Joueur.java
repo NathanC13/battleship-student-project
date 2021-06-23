@@ -6,6 +6,7 @@ import info1.ships.Ship;
 public class Joueur {
 
     private NavyFleet flotte;
+    private String pseudo;
 
 
     public Joueur(){
@@ -22,5 +23,13 @@ public class Joueur {
 
     public void clearFlotte(){
         this.flotte = new NavyFleet();
+    }
+
+    public String getPseudo() {
+        return pseudo;
+    }
+
+    public void setPseudo(String pseudo) {
+        this.pseudo = pseudo;
     }
 }

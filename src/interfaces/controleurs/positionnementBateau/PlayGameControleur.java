@@ -27,7 +27,7 @@ public class PlayGameControleur implements ActionListener {
 
 
         //création du joueur
-        Player p = new Player(positionnementBateau.getPseudo());
+        Player p = new Player(positionnementBateau.getJoueur().getPseudo());
         //inscription du joueur
         try {
             Network.suscribeNewPlayer(null,p); //"http://37.187.38.219/api/v0"
@@ -35,6 +35,7 @@ public class PlayGameControleur implements ActionListener {
             unirestException.printStackTrace();
         }
 
+        positionnementBateau.getJoueur().setPseudo(positionnementBateau.getPseudo());
 
         this.plateau.setVisible(true);
         this.positionnementBateau.dispose();
