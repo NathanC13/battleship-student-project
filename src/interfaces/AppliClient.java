@@ -11,10 +11,10 @@ public class AppliClient {
     public static void main(String[] args) {
 
 
-        MenuPrincipal fenetre = new MenuPrincipal("test");
-        PositionnementBateau positionnementBateau = new PositionnementBateau("test", fenetre);
-        Settings settings = new Settings("test");
-        Plateau plateau = new Plateau("test");
+        MenuPrincipal fenetre = new MenuPrincipal("BattleShip Beeyard Edition© - Menu Principal ");
+        PositionnementBateau positionnementBateau = new PositionnementBateau("BattleShip Beeyard Edition© - Choix des placements de bateaux ",fenetre);
+        Settings settings = new Settings("Settings ");
+        Plateau plateau = new Plateau("BattleShip Beeyard Edition© - Jeu en cours ");
 
         QuitterControleur quitterControleur = new QuitterControleur(fenetre);
         fenetre.fixeListenerQuitter(quitterControleur);
@@ -34,7 +34,7 @@ public class AppliClient {
         positionnementBateau.fixeListenerPlay(playGameControleur);
         HelpControleur helpControleur = new HelpControleur();
         positionnementBateau.fixeListenerHelp(helpControleur);
-        ClearControleur clearControleur = new ClearControleur(positionnementBateau, fenetre);
+        ClearControleur clearControleur = new ClearControleur(positionnementBateau,fenetre);
         positionnementBateau.fixeListenerClear(clearControleur);
         Bateau1Controleur bateau1Controleur = new Bateau1Controleur(positionnementBateau);
         positionnementBateau.fixeListenerBateau1(bateau1Controleur);
