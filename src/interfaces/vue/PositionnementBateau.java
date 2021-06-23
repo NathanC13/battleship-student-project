@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 
 public class PositionnementBateau extends JFrame {
 
+    private JCheckBox vertical;
     private JTextField pseudo;
     private JButton bateau1;
     private JButton bateau2;
@@ -107,7 +108,6 @@ public class PositionnementBateau extends JFrame {
 
 
 
-
         JPanel placement = new JPanel();
         JLabel placerBateau = new JLabel("Placez vos Bateaux !");
         placement.add(placerBateau);
@@ -132,12 +132,12 @@ public class PositionnementBateau extends JFrame {
         pseudo = new JTextField("");
         pseudo.setToolTipText("Entrez votre pseudo : ");
         pseudo.setBorder(BorderFactory.createTitledBorder("Entrez votre pseudo :"));
-        JLabel espace = new JLabel();
+        vertical = new JCheckBox("Vertical");
 
         JPanel selectBateau = new JPanel(new GridLayout(8,1));
 
         selectBateau.add(pseudo);
-        selectBateau.add(espace);
+        selectBateau.add(vertical);
         selectBateau.add(bateau1);
         selectBateau.add(bateau2);
         selectBateau.add(bateau3);
@@ -208,6 +208,7 @@ public class PositionnementBateau extends JFrame {
     }
 
 
+
     public ImageShowingComponent[][] getCaselist(){
         return this.listCase;
     }
@@ -260,4 +261,7 @@ public class PositionnementBateau extends JFrame {
         return pseudo.getText();
     }
 
+    public JCheckBox getVertical() {
+        return vertical;
+    }
 }

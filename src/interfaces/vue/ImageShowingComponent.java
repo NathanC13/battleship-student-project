@@ -27,16 +27,20 @@ public class ImageShowingComponent extends JComponent {
 
             System.out.println(nombre_case);
 
-            System.out.println(list.length);
-            System.out.println(list[0].length);
+            System.out.println("id + case : " + id[0] + " " + id[1]);
 
-            if (fenetre.getBateauSelected()!=-1 && id[1] + nombre_case<10) {
-
+            if (fenetre.getBateauSelected()!=-1) {
+                System.out.println("test");
                     try {
                         Image image1 = ImageIO.read(new File("./img/case_bateau.png"));
                         for (int i = 0; i < nombre_case; i++) {
-                            ImageShowingComponent case0 = list[id[0]][id[1]+i];
-                            case0.img = image1;
+                            if (fenetre.getVertical().isSelected() && (id[0] + nombre_case<=10)) {
+                                ImageShowingComponent case0 = list[id[0] + i][id[1]];
+                                case0.img = image1;
+                            }else if ((!fenetre.getVertical().isSelected()) && (id[1] + nombre_case<=10)){
+                                ImageShowingComponent case0 = list[id[0]][id[1] + i];
+                                case0.img = image1;
+                            }
                         }
                     } catch (IOException exception) {
                         exception.printStackTrace();
