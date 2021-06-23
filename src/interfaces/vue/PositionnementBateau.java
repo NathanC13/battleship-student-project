@@ -147,7 +147,7 @@ public class PositionnementBateau extends JFrame {
 
         //this.setResizable(false);
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        this.setPreferredSize(new Dimension(700,650));
+        this.setPreferredSize(new Dimension(1175,800));
         this.setContentPane(principal);
 
     }
