@@ -11,12 +11,12 @@ public class PositionnementBateau extends JFrame {
     private JButton jouer;
     private JButton bouton1;
     private JButton bouton2;
-    private ArrayList<ImageShowingComponent> caseList;
+    private ArrayList<ImageShowingComponent> listCase;
 
     public PositionnementBateau(String titre){
         super (titre);
 
-        this.caseList = new ArrayList<>();
+        listCase = new ArrayList<>();
 
         JPanel principal = new JPanel();
 
@@ -33,16 +33,16 @@ public class PositionnementBateau extends JFrame {
 
 
 
-        JLabel labelA = new JLabel("               A");
-        JLabel labelB = new JLabel("               B");
-        JLabel labelC = new JLabel("               C");
-        JLabel labelD = new JLabel("               D");
-        JLabel labelE = new JLabel("               E");
-        JLabel labelF = new JLabel("               F");
-        JLabel labelG = new JLabel("               G");
-        JLabel labelH = new JLabel("               H");
-        JLabel labelI = new JLabel("               I");
-        JLabel labelJ = new JLabel("               J");
+        JLabel labelA = new JLabel("A");
+        JLabel labelB = new JLabel("B");
+        JLabel labelC = new JLabel("C");
+        JLabel labelD = new JLabel("D");
+        JLabel labelE = new JLabel("E");
+        JLabel labelF = new JLabel("F");
+        JLabel labelG = new JLabel("G");
+        JLabel labelH = new JLabel("H");
+        JLabel labelI = new JLabel("I");
+        JLabel labelJ = new JLabel("J");
         JLabel labelvide = new JLabel("");
 
 
@@ -67,8 +67,7 @@ public class PositionnementBateau extends JFrame {
             for (int y=0; y<10; y++){
 
                 ImageShowingComponent img = new ImageShowingComponent(id, this);
-                caseList.add(img);
-
+                listCase.add(img);
                 jeu1.add(img);
                 id++;
             }
@@ -102,7 +101,6 @@ public class PositionnementBateau extends JFrame {
 
         Icon IconBateau1 = new ImageIcon("./img/bateau_1case.png");
         JButton bateau1 = new JButton(IconBateau1);
-        bateau1.setSize(1,1);
         Icon IconBateau2 = new ImageIcon("./img/bateau_2cases.png");
         JButton bateau2 = new JButton(IconBateau2);
         Icon IconBateau3 = new ImageIcon("./img/bateau_3cases.png");
@@ -115,8 +113,7 @@ public class PositionnementBateau extends JFrame {
 
 
         JTextField pseudo = new JTextField("");
-        pseudo.setBorder(BorderFactory.createTitledBorder("Entrez votre pseudo"));
-        JLabel espace = new JLabel("Vous avez differents bateaux (1,2,3,4 ou 5 cases à placer : ");
+        JLabel espace = new JLabel();
 
         JPanel selectBateau = new JPanel(new GridLayout(8,1));
 
@@ -150,7 +147,7 @@ public class PositionnementBateau extends JFrame {
 
         //this.setResizable(false);
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        this.setPreferredSize(new Dimension(1150,725));
+        this.setPreferredSize(new Dimension(700,650));
         this.setContentPane(principal);
 
     }
@@ -172,6 +169,6 @@ public class PositionnementBateau extends JFrame {
     }
 
     public ArrayList<ImageShowingComponent> getCaselist(){
-        return this.caseList;
+        return this.listCase;
     }
 }
