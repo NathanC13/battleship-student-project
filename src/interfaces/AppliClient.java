@@ -10,9 +10,10 @@ import interfaces.vue.*;
 public class AppliClient {
     public static void main(String[] args) {
 
+        Joueur joueur = new Joueur();
 
         MenuPrincipal fenetre = new MenuPrincipal("BattleShip Beeyard Edition© - Menu Principal ");
-        PositionnementBateau positionnementBateau = new PositionnementBateau("BattleShip Beeyard Edition© - Choix des placements de bateaux ");
+        PositionnementBateau positionnementBateau = new PositionnementBateau("BattleShip Beeyard Edition© - Choix des placements de bateaux ", joueur);
         Settings settings = new Settings("Settings ");
         Plateau plateau = new Plateau("BattleShip Beeyard Edition© - Jeu en cours ");
 
@@ -59,6 +60,7 @@ public class AppliClient {
 
         plateau.fixeListenerSettings(settingsControleur);
         plateau.fixeListenerHelp(helpControleur);
+
 
 
 

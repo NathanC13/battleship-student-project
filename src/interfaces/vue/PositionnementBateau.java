@@ -1,5 +1,7 @@
 package interfaces.vue;
 
+import interfaces.Joueur;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
@@ -21,10 +23,14 @@ public class PositionnementBateau extends JFrame {
     private JButton bouton2;
     private ImageShowingComponent[][] listCase;
 
-    public PositionnementBateau(String titre){
+    private Joueur joueur;
+
+    public PositionnementBateau(String titre, Joueur joueur){
         super (titre);
 
         listCase = new ImageShowingComponent[10][];
+
+        this.joueur = joueur;
 
         for (int i = 0; i < 10; i++){
             listCase[i] = new ImageShowingComponent[10];
@@ -82,7 +88,7 @@ public class PositionnementBateau extends JFrame {
             jeu1.add(new JLabel(text));
             for (int y=0; y<10; y++){
 
-                ImageShowingComponent img = new ImageShowingComponent(new int[]{x,y}, this);
+                ImageShowingComponent img = new ImageShowingComponent(new int[]{x,y}, this, joueur);
                 img.setType(0);
                 listCase[x][y] = img;
 
@@ -269,5 +275,9 @@ public class PositionnementBateau extends JFrame {
 
     public JCheckBox getVertical() {
         return vertical;
+    }
+
+    public Joueur getJoueur() {
+        return joueur;
     }
 }

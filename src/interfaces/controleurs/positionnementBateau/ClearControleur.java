@@ -45,6 +45,8 @@ public class ClearControleur implements ActionListener {
 
         fenetre.resetButton(menu);
 
+        fenetre.getJoueur().clearFlotte();
+
         fenetre.invalidate(); //actualise la fenetre
         fenetre.validate();
         fenetre.repaint();

@@ -46,7 +46,7 @@ public class Plateau extends JFrame{
         for (int x=0; x<10; x++){
             for (int y=0; y<10; y++){
 
-                ImageShowingComponent img = new ImageShowingComponent(new int[]{x,y}, null);
+                ImageShowingComponent img = new ImageShowingComponent(new int[]{x,y}, null, null);
 
                 east.add(img);
             }
@@ -57,7 +57,7 @@ public class Plateau extends JFrame{
         for (int x=0; x<10; x++){
             for (int y=0; y<10; y++){
 
-                ImageShowingComponent img = new ImageShowingComponent(new int[]{x,y}, null);
+                ImageShowingComponent img = new ImageShowingComponent(new int[]{x,y}, null, null);
 
                 center.add(img);
             }

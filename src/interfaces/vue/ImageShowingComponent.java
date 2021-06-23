@@ -1,5 +1,8 @@
 package interfaces.vue;
 
+import info1.ships.*;
+import interfaces.Joueur;
+
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
@@ -15,6 +18,8 @@ public class ImageShowingComponent extends JComponent {
     private int[] id;
     private PositionnementBateau fenetre;
     private int type;
+    private Joueur joueur;
+    private Ship boat;
 
     private MouseListener listener = new MouseAdapter() {
         public void mouseClicked(MouseEvent e) {
@@ -24,6 +29,8 @@ public class ImageShowingComponent extends JComponent {
 
             boolean horizontale = true;
             boolean vertical = true;
+
+
 
             int nombre_case = fenetre.getBateauSelected() + 1;
 
@@ -39,15 +46,57 @@ public class ImageShowingComponent extends JComponent {
                 }
             }
 
-            System.out.println("Verticale: " + horizontale);
-            System.out.println("Horizontale: " + vertical);
-
-            System.out.println(nombre_case);
-
+            String a = null;
+            String b = null;
+            if (fenetre.getVertical().isSelected()) {
+                a = (Character.toString((char) id[1] + 65) + ((id[0] + 1)));
+                b = (Character.toString((char) id[1] + 65) + ((id[0] + 1) + nombre_case - 1));
+            } else if (!fenetre.getVertical().isSelected()){
+                a = (Character.toString((char) id[1] + 65) + ((id[0] + 1)));
+                b = (Character.toString((char) id[1] + 65 + nombre_case - 1)) + (id[0] + 1) ;
+            }
 
             System.out.println("id + case : " + id[0] + " " + id[1]);
 
             if (fenetre.getBateauSelected()!=-1) {
+
+                System.out.println(Character.toString((char) id[1]+65) +((id[0]+1)) + " " + Character.toString((char) id[1]+65) +((id[0]+1)));
+
+                if (fenetre.getBateauSelected() == 0){
+                    try {
+                        boat = new Submarine("submarine" + Character.toString((char) id[1]+65) +id[0], Character.toString((char) id[1]+65) +(id[0]+1));
+                    } catch (BadCoordException | CoordsBadShipException badCoordException) {
+                        badCoordException.printStackTrace();
+                    }
+                } else if (fenetre.getBateauSelected() == 1){
+                    try {
+                        boat = new Destroyer("destroyer" + Character.toString((char) id[1]+65) +id[0], a, b);
+                        System.out.println(boat.getCoords());
+                    } catch (BadCoordException | CoordsBadShipException badCoordException) {
+                        badCoordException.printStackTrace();
+                    }
+                } else if (fenetre.getBateauSelected() == 2) {
+                    try {
+                        boat = new Cruiser("cruiser" + Character.toString((char) id[1]+65) +id[0], Character.toString((char) id[1]+65) +((id[0]+1)), Character.toString((char) id[1]+65) +((id[0]+1)+nombre_case-1));
+                    } catch (BadCoordException | CoordsBadShipException badCoordException) {
+                        badCoordException.printStackTrace();
+                    }
+                } else if (fenetre.getBateauSelected() == 3) {
+                    try {
+                        boat = new Battleship("battleship" + Character.toString((char) id[1]+65) +id[0], Character.toString((char) id[1]+65) +((id[0]+1)), Character.toString((char) id[1]+65) +((id[0]+1)+nombre_case-1));
+                    } catch (BadCoordException | CoordsBadShipException badCoordException) {
+                        badCoordException.printStackTrace();
+                    }
+                } else if (fenetre.getBateauSelected() == 4) {
+                    try {
+                        boat = new AircraftCarrier("aircraftcarrier" + Character.toString((char) id[1]+65) +id[0], Character.toString((char) id[1]+65) +((id[0]+1)), Character.toString((char) id[1]+65) +((id[0]+1)+nombre_case-1));
+                    } catch (BadCoordException | CoordsBadShipException badCoordException) {
+                        badCoordException.printStackTrace();
+                    }
+                }
+
+
+
                     try {
                         Image image1 = ImageIO.read(new File("./img/cases_brouillon/case_bateau.png"));
                         for (int i = 0; i < nombre_case; i++) {
@@ -57,10 +106,12 @@ public class ImageShowingComponent extends JComponent {
                                 ImageShowingComponent case0 = list[id[0] + i][id[1]];
                                 case0.img = image1;
                                 case0.setType(1);
+                                joueur.addFlotte(boat);
                             }else if ((!fenetre.getVertical().isSelected()) && (id[1] + nombre_case<=10) && horizontale){
                                 ImageShowingComponent case0 = list[id[0]][id[1] + i];
                                 case0.img = image1;
                                 case0.setType(1);
+
                             }
                         }
                     } catch (IOException exception) {
@@ -76,10 +127,11 @@ public class ImageShowingComponent extends JComponent {
         }
     };
 
-    ImageShowingComponent(int[] id, PositionnementBateau fenetre) {
+    ImageShowingComponent(int[] id, PositionnementBateau fenetre, Joueur joueur) {
         addMouseListener(listener);
         this.id = id;
         this.fenetre = fenetre;
+        this.joueur = joueur;
 
         try {
             img = ImageIO.read(new File("./img/case_normale.png"));

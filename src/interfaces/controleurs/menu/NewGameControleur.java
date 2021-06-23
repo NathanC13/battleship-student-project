@@ -26,10 +26,8 @@ public class NewGameControleur implements ActionListener {
 
         if (fenetre.getBe().isSelected()){
             fenetreBateau.getBateau5().setEnabled(false);
-            System.out.println("yes");
         }else if (fenetre.getFr().isSelected()){
             fenetreBateau.getBateau1().setEnabled(false);
-            System.out.println("non");
         }
 
     }
