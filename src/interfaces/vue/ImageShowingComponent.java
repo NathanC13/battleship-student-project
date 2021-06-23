@@ -23,8 +23,25 @@ public class ImageShowingComponent extends JComponent {
 
             ImageShowingComponent[][] list = fenetre.getCaselist();
 
+            boolean horizontale = true;
+            boolean vertical = true;
 
             int nombre_case = fenetre.getBateauSelected() + 1;
+
+            for (int i=0; i<nombre_case; i++){
+                if (id[1] + nombre_case<=10)
+                    if(list[id[0]][id[1]+i].type == 1){
+                        horizontale = false;
+                    }
+                if (id[0] + nombre_case<=10) {
+                    if (list[id[0] + i][id[1]].type == 1) {
+                        vertical = false;
+                    }
+                }
+            }
+
+            System.out.println("Verticale: " + horizontale);
+            System.out.println("Horizontale: " + vertical);
 
             System.out.println(nombre_case);
 
@@ -41,11 +58,11 @@ public class ImageShowingComponent extends JComponent {
                         for (int i = 0; i < nombre_case; i++) {
 
 
-                            if (fenetre.getVertical().isSelected() && (id[0] + nombre_case<=10)) {
+                            if (fenetre.getVertical().isSelected() && (id[0] + nombre_case<=10) && vertical) {
                                 ImageShowingComponent case0 = list[id[0] + i][id[1]];
                                 case0.img = image1;
                                 case0.setType(1);
-                            }else if ((!fenetre.getVertical().isSelected()) && (id[1] + nombre_case<=10)){
+                            }else if ((!fenetre.getVertical().isSelected()) && (id[1] + nombre_case<=10) && horizontale){
                                 ImageShowingComponent case0 = list[id[0]][id[1] + i];
                                 case0.img = image1;
                                 case0.setType(1);
