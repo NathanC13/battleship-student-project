@@ -1,5 +1,6 @@
 package interfaces.controleurs.positionnementBateau;
 
+import info1.network.Network;
 import interfaces.vue.Plateau;
 import interfaces.vue.PositionnementBateau;
 

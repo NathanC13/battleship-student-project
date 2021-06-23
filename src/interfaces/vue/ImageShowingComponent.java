@@ -29,18 +29,18 @@ public class ImageShowingComponent extends JComponent {
 
 
             if (fenetre.getBateauSelected()!=-1) {
+                int nombre = id+nombre_case;
+                    try {
+                        img = ImageIO.read(new File("./img/case_bateau.png"));
 
-                try {
-                    img = ImageIO.read(new File("./img/case_bateau.png"));
+                    } catch (IOException exception) {
+                        exception.printStackTrace();
+                    }
 
-                } catch (IOException exception) {
-                    exception.printStackTrace();
-                }
-
-                for (int i = 0; i < nombre_case; i++) {
-                    ImageShowingComponent case0 = list.get(id - 1 + i);
-                    case0.img = img;
-                }
+                    for (int i = 0; i < nombre_case; i++) {
+                        ImageShowingComponent case0 = list.get(id - 1 + i);
+                        case0.img = img;
+                    }
             }
 
 
