@@ -1,5 +1,6 @@
 package interfaces.controleurs.menu;
 
+import info1.network.Network;
 import interfaces.vue.Menu;
 import interfaces.vue.PositionnementBateau;
 
@@ -18,6 +19,7 @@ public class NewGameControleur implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+
 
         this.fenetreBateau.setVisible(true);
         this.fenetre.dispose();
