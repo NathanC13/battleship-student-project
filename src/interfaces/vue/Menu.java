@@ -50,6 +50,10 @@ public class Menu extends JFrame {
         panel3.add(panel5,BorderLayout.WEST);
         panel6.add(bouton3);
         panel6.add(bouton4);
+        JPanel panel7 = new JPanel(new FlowLayout(FlowLayout.CENTER));
+        ImageMenu2 img2 = new ImageMenu2();
+        panel7.add(img2);
+        panel2.add(panel7,BorderLayout.CENTER);
         panel3.add(panel6,BorderLayout.EAST);
         panel2.add(panel3,BorderLayout.SOUTH);
 
