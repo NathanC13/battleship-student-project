@@ -8,7 +8,6 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
 
 public class ImageShowingComponent extends JComponent {
 
@@ -71,7 +70,6 @@ public class ImageShowingComponent extends JComponent {
                     } catch (IOException exception) {
                         exception.printStackTrace();
                     }
-
 
             }
 

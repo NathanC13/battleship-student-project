@@ -61,8 +61,6 @@ public class MenuPrincipal extends JFrame {
 
 
 
-
-
         panel5.add(label1);
         panel3.add(panel5,BorderLayout.WEST);
         panel6.add(fr);
@@ -106,5 +104,13 @@ public class MenuPrincipal extends JFrame {
     }
     public void fixeListenerBelge(ActionListener action){
         be.addActionListener(action); //oui
+    }
+
+    public JRadioButton getFr() {
+        return fr;
+    }
+
+    public JRadioButton getBe() {
+        return be;
     }
 }

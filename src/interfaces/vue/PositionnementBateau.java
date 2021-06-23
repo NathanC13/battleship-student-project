@@ -21,7 +21,7 @@ public class PositionnementBateau extends JFrame {
     private JButton bouton2;
     private ImageShowingComponent[][] listCase;
 
-    public PositionnementBateau(String titre){
+    public PositionnementBateau(String titre, MenuPrincipal menu){
         super (titre);
 
         listCase = new ImageShowingComponent[10][];
@@ -127,6 +127,12 @@ public class PositionnementBateau extends JFrame {
         Icon IconBateau5 = new ImageIcon("./img/bateau_5cases.png");
         bateau5 = new JButton(IconBateau5);
 
+        if (menu.getBe().isSelected()){
+            bateau5.setEnabled(false);
+        }
+        if (menu.getFr().isSelected()){
+            bateau1.setEnabled(false);
+        }
 
 
         pseudo = new JTextField("");
@@ -249,12 +255,17 @@ public class PositionnementBateau extends JFrame {
         return bateau5;
     }
 
-    public void resetButton(){
-        bateau1.setEnabled(true);
+    public void resetButton(MenuPrincipal menu){
+
         bateau2.setEnabled(true);
         bateau3.setEnabled(true);
         bateau4.setEnabled(true);
-        bateau5.setEnabled(true);
+        if (menu.getBe().isSelected()) {
+            bateau1.setEnabled(true);
+        }
+        if (menu.getFr().isSelected()) {
+            bateau5.setEnabled(true);
+        }
     }
 
     public String getPseudo() {

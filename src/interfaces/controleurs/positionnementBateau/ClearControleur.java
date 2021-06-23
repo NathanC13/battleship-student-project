@@ -1,6 +1,7 @@
 package interfaces.controleurs.positionnementBateau;
 
 import interfaces.vue.ImageShowingComponent;
+import interfaces.vue.MenuPrincipal;
 import interfaces.vue.PositionnementBateau;
 
 import javax.imageio.ImageIO;
@@ -14,9 +15,12 @@ import java.io.IOException;
 public class ClearControleur implements ActionListener {
 
     private PositionnementBateau fenetre;
+    private MenuPrincipal menu;
 
-    public ClearControleur(PositionnementBateau fenetre){
+    public ClearControleur(PositionnementBateau fenetre, MenuPrincipal menu){
         this.fenetre = fenetre;
+        this.menu = menu;
+
     }
 
     @Override
@@ -39,7 +43,7 @@ public class ClearControleur implements ActionListener {
             exception.printStackTrace();
         }
 
-        fenetre.resetButton();
+        fenetre.resetButton(menu);
 
         fenetre.invalidate(); //actualise la fenetre
         fenetre.validate();
