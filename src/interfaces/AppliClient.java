@@ -1,5 +1,6 @@
 package interfaces;
 
+import interfaces.controleurs.menu.InformationsControleur;
 import interfaces.controleurs.menu.NewGameControleur;
 import interfaces.controleurs.menu.QuitterControleur;
 import interfaces.controleurs.positionnementBateau.ClearControleur;
@@ -24,6 +25,8 @@ public class AppliClient {
         fenetre.fixeListenerQuitter(quitterControleur);
         NewGameControleur newGameControleur = new NewGameControleur(fenetre, positionnementBateau);
         fenetre.fixeListenerNewGame(newGameControleur);
+        InformationsControleur info = new InformationsControleur(fenetre);
+        fenetre.fixeListenerInformation(info);
 
 
         SettingsControleur settingsControleur = new SettingsControleur(positionnementBateau, settings);
