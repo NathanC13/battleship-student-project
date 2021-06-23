@@ -45,11 +45,11 @@ public class ServeurChoix extends JFrame {
 
         panelprincipal.add(new JScrollPane(panelgauche),BorderLayout.WEST);
 
-        JButton okButton = new JButton("OK");
+        JButton okButton = new JButton("Rejoindre");
         okButton.setMargin(new Insets(20, 50, 20, 50));
         okButton.setFont(okButton.getFont().deriveFont(50f));
         JPanel centerButtonPanel = new JPanel(new GridBagLayout());
-        centerButtonPanel.setBorder(new EmptyBorder(100,100,100,100));
+        centerButtonPanel.setBorder(new EmptyBorder(50,50,50,50));
         centerButtonPanel.add(okButton);
         panelprincipal.add(centerButtonPanel, BorderLayout.CENTER);
 
