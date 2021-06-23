@@ -53,7 +53,7 @@ public class ImageShowingComponent extends JComponent {
             if (fenetre.getBateauSelected()!=-1) {
                 System.out.println("test");
                     try {
-                        Image image1 = ImageIO.read(new File("./img/case_bateau.png"));
+                        Image image1 = ImageIO.read(new File("./img/cases_brouillon/case_bateau.png"));
                         for (int i = 0; i < nombre_case; i++) {
 
 
