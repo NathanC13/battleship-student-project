@@ -121,6 +121,8 @@ public class PositionnementBateau extends JFrame {
 
 
         JTextField pseudo = new JTextField("");
+        pseudo.setToolTipText("Entrez votre pseudo : ");
+        pseudo.setBorder(BorderFactory.createTitledBorder("Entrez votre pseudo :"));
         JLabel espace = new JLabel();
 
         JPanel selectBateau = new JPanel(new GridLayout(8,1));
@@ -155,7 +157,7 @@ public class PositionnementBateau extends JFrame {
 
         //this.setResizable(false);
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        this.setPreferredSize(new Dimension(1175,800));
+        this.setPreferredSize(new Dimension(700,650));
         this.setContentPane(principal);
 
     }
