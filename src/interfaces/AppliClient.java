@@ -1,8 +1,6 @@
 package interfaces;
 
-import interfaces.controleurs.menu.InformationsControleur;
-import interfaces.controleurs.menu.NewGameControleur;
-import interfaces.controleurs.menu.QuitterControleur;
+import interfaces.controleurs.menu.*;
 import interfaces.controleurs.positionnementBateau.*;
 import interfaces.controleurs.settings.BackControleur;
 import interfaces.controleurs.settings.QuitterSettingsControleur;
@@ -13,7 +11,7 @@ public class AppliClient {
     public static void main(String[] args) {
 
 
-        Menu fenetre = new Menu("test");
+        MenuPrincipal fenetre = new MenuPrincipal("test");
         PositionnementBateau positionnementBateau = new PositionnementBateau("test");
         Settings settings = new Settings("test");
         Plateau plateau = new Plateau("test");
@@ -24,6 +22,10 @@ public class AppliClient {
         fenetre.fixeListenerNewGame(newGameControleur);
         InformationsControleur info = new InformationsControleur(fenetre);
         fenetre.fixeListenerInformation(info);
+        BelgeControleur be = new BelgeControleur(fenetre);
+        fenetre.fixeListenerBelge(be);
+        FrancaisControleur fr = new FrancaisControleur(fenetre);
+        fenetre.fixeListenerFrancais(fr);
 
 
         SettingsControleur settingsControleur = new SettingsControleur(positionnementBateau, settings);

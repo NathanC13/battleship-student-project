@@ -4,15 +4,18 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
 
-public class Menu extends JFrame {
+public class MenuPrincipal extends JFrame {
 
     private JButton bouton0;
     private JButton bouton1;
     private JButton bouton2;
     private JButton bouton3;
     private JButton bouton4;
+    private JRadioButton fr;
+    private JRadioButton be;
+    private ButtonGroup group;
 
-    public Menu(String titre){
+    public MenuPrincipal(String titre){
         super(titre);
 
         //panel principal contenant les autres panels
@@ -44,12 +47,26 @@ public class Menu extends JFrame {
         JPanel panel5 = new JPanel();
         JPanel panel6 = new JPanel();
         JLabel label1 = new JLabel("Bienvenue dans la bataille navale - BeeYard Edition");
-        this.bouton3 = new JButton("Français");
-        this.bouton4 = new JButton("Belge");
+       // this.bouton3 = new JButton("Français");
+        //this.bouton4 = new JButton("Belge");
+
+
+
+        fr = new JRadioButton("Français", true);
+        be = new JRadioButton("Belge");
+        ButtonGroup group = new ButtonGroup();
+        group.add(fr);
+        group.add(be);
+
+
+
+
+
+
         panel5.add(label1);
         panel3.add(panel5,BorderLayout.WEST);
-        panel6.add(bouton3);
-        panel6.add(bouton4);
+        panel6.add(fr);
+        panel6.add(be);
         JPanel panel7 = new JPanel(new FlowLayout(FlowLayout.CENTER));
         ImageMenu2 img2 = new ImageMenu2();
         panel7.add(img2);
@@ -83,5 +100,11 @@ public class Menu extends JFrame {
     }
     public void fixeListenerInformation(ActionListener action){
         bouton0.addActionListener(action); //oui
+    }
+    public void fixeListenerFrancais(ActionListener action){
+        fr.addActionListener(action); //oui
+    }
+    public void fixeListenerBelge(ActionListener action){
+        be.addActionListener(action); //oui
     }
 }
