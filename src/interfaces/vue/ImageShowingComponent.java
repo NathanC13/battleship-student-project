@@ -22,17 +22,27 @@ public class ImageShowingComponent extends JComponent {
 
             ArrayList<ImageShowingComponent> list = fenetre.getCaselist();
 
-            ImageShowingComponent case0 = list.get(id-1);
 
 
-            try {
-                img = ImageIO.read(new File("./img/case_rate.png"));
+            int nombre_case = fenetre.getBateauSelected() + 1;
 
-            } catch (IOException exception) {
-                exception.printStackTrace();
+
+
+            if (fenetre.getBateauSelected()!=-1) {
+
+                try {
+                    img = ImageIO.read(new File("./img/case_bateau.png"));
+
+                } catch (IOException exception) {
+                    exception.printStackTrace();
+                }
+
+                for (int i = 0; i < nombre_case; i++) {
+                    ImageShowingComponent case0 = list.get(id - 1 + i);
+                    case0.img = img;
+                }
             }
 
-            case0.img = img;
 
             fenetre.invalidate(); //actualise la fenetre
             fenetre.validate();

@@ -7,6 +7,13 @@ import java.util.ArrayList;
 
 public class PositionnementBateau extends JFrame {
 
+    private JButton bateau1;
+    private JButton bateau2;
+    private JButton bateau3;
+    private JButton bateau4;
+    private JButton bateau5;
+    private boolean[] bateauSelected;
+
     private JButton clear;
     private JButton jouer;
     private JButton bouton1;
@@ -17,6 +24,7 @@ public class PositionnementBateau extends JFrame {
         super (titre);
 
         listCase = new ArrayList<>();
+        bateauSelected = new boolean[]{false, false, false, false, false};
 
         JPanel principal = new JPanel();
 
@@ -100,15 +108,15 @@ public class PositionnementBateau extends JFrame {
         haut.add(placement);
 
         Icon IconBateau1 = new ImageIcon("./img/bateau_1case.png");
-        JButton bateau1 = new JButton(IconBateau1);
+        bateau1 = new JButton(IconBateau1);
         Icon IconBateau2 = new ImageIcon("./img/bateau_2cases.png");
-        JButton bateau2 = new JButton(IconBateau2);
+        bateau2 = new JButton(IconBateau2);
         Icon IconBateau3 = new ImageIcon("./img/bateau_3cases.png");
-        JButton bateau3 = new JButton(IconBateau3);
+        bateau3 = new JButton(IconBateau3);
         Icon IconBateau4 = new ImageIcon("./img/bateau_4cases.png");
-        JButton bateau4 = new JButton(IconBateau4);
+        bateau4 = new JButton(IconBateau4);
         Icon IconBateau5 = new ImageIcon("./img/bateau_5cases.png");
-        JButton bateau5 = new JButton(IconBateau5);
+        bateau5 = new JButton(IconBateau5);
 
 
 
@@ -168,7 +176,64 @@ public class PositionnementBateau extends JFrame {
         clear.addActionListener(action);
     }
 
+    public void fixeListenerBateau1(ActionListener action){
+        bateau1.addActionListener(action);
+    }
+
+    public void fixeListenerBateau2(ActionListener action){
+        bateau2.addActionListener(action);
+    }
+
+    public void fixeListenerBateau3(ActionListener action){
+        bateau3.addActionListener(action);
+    }
+
+    public void fixeListenerBateau4(ActionListener action){
+        bateau4.addActionListener(action);
+    }
+
+    public void fixeListenerBateau5(ActionListener action){
+        bateau5.addActionListener(action);
+    }
+
+
     public ArrayList<ImageShowingComponent> getCaselist(){
         return this.listCase;
+    }
+
+    public int getBateauSelected() {
+        for (int i =0 ; i<bateauSelected.length; i++){
+            if (bateauSelected[i]==true){
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    public void setBateauSelected(boolean val, int pos) {
+
+        boolean[] tab = new boolean[] {false,false,false,false,false};
+        tab[pos] = val;
+        this.bateauSelected = tab;
+    }
+
+    public JButton getBateau1() {
+        return bateau1;
+    }
+
+    public JButton getBateau2() {
+        return bateau2;
+    }
+
+    public JButton getBateau3() {
+        return bateau3;
+    }
+
+    public JButton getBateau4() {
+        return bateau4;
+    }
+
+    public JButton getBateau5() {
+        return bateau5;
     }
 }

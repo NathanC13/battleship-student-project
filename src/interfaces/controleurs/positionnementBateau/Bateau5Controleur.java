@@ -5,16 +5,17 @@ import interfaces.vue.PositionnementBateau;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class ClearControleur implements ActionListener {
+public class Bateau5Controleur implements ActionListener {
 
     private PositionnementBateau fenetre;
 
-    public ClearControleur(PositionnementBateau fenetre){
+    public Bateau5Controleur(PositionnementBateau fenetre){
         this.fenetre = fenetre;
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        System.out.println("CLEAR");
+        fenetre.setBateauSelected(true,4);
+        fenetre.getBateau5().setEnabled(false);
     }
 }

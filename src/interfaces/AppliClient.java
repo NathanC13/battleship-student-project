@@ -3,10 +3,7 @@ package interfaces;
 import interfaces.controleurs.menu.InformationsControleur;
 import interfaces.controleurs.menu.NewGameControleur;
 import interfaces.controleurs.menu.QuitterControleur;
-import interfaces.controleurs.positionnementBateau.ClearControleur;
-import interfaces.controleurs.positionnementBateau.HelpControleur;
-import interfaces.controleurs.positionnementBateau.PlayGameControleur;
-import interfaces.controleurs.positionnementBateau.SettingsControleur;
+import interfaces.controleurs.positionnementBateau.*;
 import interfaces.controleurs.settings.BackControleur;
 import interfaces.controleurs.settings.QuitterSettingsControleur;
 import interfaces.controleurs.settings.RestartControleur;
@@ -35,8 +32,19 @@ public class AppliClient {
         positionnementBateau.fixeListenerPlay(playGameControleur);
         HelpControleur helpControleur = new HelpControleur();
         positionnementBateau.fixeListenerHelp(helpControleur);
-        ClearControleur clearControleur = new ClearControleur();
+        ClearControleur clearControleur = new ClearControleur(positionnementBateau);
         positionnementBateau.fixeListenerClear(clearControleur);
+        Bateau1Controleur bateau1Controleur = new Bateau1Controleur(positionnementBateau);
+        positionnementBateau.fixeListenerBateau1(bateau1Controleur);
+        Bateau2Controleur bateau2Controleur = new Bateau2Controleur(positionnementBateau);
+        positionnementBateau.fixeListenerBateau2(bateau2Controleur);
+        Bateau3Controleur bateau3Controleur = new Bateau3Controleur(positionnementBateau);
+        positionnementBateau.fixeListenerBateau3(bateau3Controleur);
+        Bateau4Controleur bateau4Controleur = new Bateau4Controleur(positionnementBateau);
+        positionnementBateau.fixeListenerBateau4(bateau4Controleur);
+        Bateau5Controleur bateau5Controleur = new Bateau5Controleur(positionnementBateau);
+        positionnementBateau.fixeListenerBateau5(bateau5Controleur);
+
 
 
         BackControleur backControleur = new BackControleur(settings);
