@@ -12,7 +12,7 @@ public class AppliClient {
 
 
         MenuPrincipal fenetre = new MenuPrincipal("BattleShip Beeyard Edition© - Menu Principal ");
-        PositionnementBateau positionnementBateau = new PositionnementBateau("BattleShip Beeyard Edition© - Choix des placements de bateaux ",fenetre);
+        PositionnementBateau positionnementBateau = new PositionnementBateau("BattleShip Beeyard Edition© - Choix des placements de bateaux ");
         Settings settings = new Settings("Settings ");
         Plateau plateau = new Plateau("BattleShip Beeyard Edition© - Jeu en cours ");
 

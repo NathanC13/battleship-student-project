@@ -44,14 +44,10 @@ public class ImageShowingComponent extends JComponent {
 
             System.out.println(nombre_case);
 
-            Image test = list[id[0]][id[1]].img;
-
-            System.out.println(test);
 
             System.out.println("id + case : " + id[0] + " " + id[1]);
 
             if (fenetre.getBateauSelected()!=-1) {
-                System.out.println("test");
                     try {
                         Image image1 = ImageIO.read(new File("./img/cases_brouillon/case_bateau.png"));
                         for (int i = 0; i < nombre_case; i++) {

@@ -21,7 +21,7 @@ public class PositionnementBateau extends JFrame {
     private JButton bouton2;
     private ImageShowingComponent[][] listCase;
 
-    public PositionnementBateau(String titre, MenuPrincipal menu){
+    public PositionnementBateau(String titre){
         super (titre);
 
         listCase = new ImageShowingComponent[10][];
