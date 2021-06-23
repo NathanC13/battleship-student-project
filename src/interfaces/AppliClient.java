@@ -12,7 +12,7 @@ public class AppliClient {
 
 
         MenuPrincipal fenetre = new MenuPrincipal("test");
-        PositionnementBateau positionnementBateau = new PositionnementBateau("test");
+        PositionnementBateau positionnementBateau = new PositionnementBateau("test", fenetre);
         Settings settings = new Settings("test");
         Plateau plateau = new Plateau("test");
 
@@ -34,7 +34,7 @@ public class AppliClient {
         positionnementBateau.fixeListenerPlay(playGameControleur);
         HelpControleur helpControleur = new HelpControleur();
         positionnementBateau.fixeListenerHelp(helpControleur);
-        ClearControleur clearControleur = new ClearControleur(positionnementBateau);
+        ClearControleur clearControleur = new ClearControleur(positionnementBateau, fenetre);
         positionnementBateau.fixeListenerClear(clearControleur);
         Bateau1Controleur bateau1Controleur = new Bateau1Controleur(positionnementBateau);
         positionnementBateau.fixeListenerBateau1(bateau1Controleur);
