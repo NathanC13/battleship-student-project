@@ -24,5 +24,13 @@ public class NewGameControleur implements ActionListener {
         this.fenetreBateau.setVisible(true);
         this.fenetre.dispose();
 
+        if (fenetre.getBe().isSelected()){
+            fenetreBateau.getBateau5().setEnabled(false);
+            System.out.println("yes");
+        }else if (fenetre.getFr().isSelected()){
+            fenetreBateau.getBateau1().setEnabled(false);
+            System.out.println("non");
+        }
+
     }
 }

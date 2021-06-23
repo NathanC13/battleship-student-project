@@ -127,12 +127,7 @@ public class PositionnementBateau extends JFrame {
         Icon IconBateau5 = new ImageIcon("./img/bateau_5cases.png");
         bateau5 = new JButton(IconBateau5);
 
-        if (menu.getBe().isSelected()){
-            bateau5.setEnabled(false);
-        }
-        if (menu.getFr().isSelected()){
-            bateau1.setEnabled(false);
-        }
+
 
 
         pseudo = new JTextField("");
