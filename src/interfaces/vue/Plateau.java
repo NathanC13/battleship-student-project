@@ -42,28 +42,24 @@ public class Plateau extends JFrame{
 
         JPanel east = new JPanel();
         east.setLayout(new GridLayout(10,10));
-        int id = 1;
 
         for (int x=0; x<10; x++){
             for (int y=0; y<10; y++){
 
-                ImageShowingComponent img = new ImageShowingComponent(id, null);
+                ImageShowingComponent img = new ImageShowingComponent(new int[]{x,y}, null);
 
                 east.add(img);
-                id++;
             }
         }
         JPanel center =  new JPanel();
         center.setLayout(new GridLayout(10,10));
-        int id1 = 1;
 
         for (int x=0; x<10; x++){
             for (int y=0; y<10; y++){
 
-                ImageShowingComponent img = new ImageShowingComponent(id1, null);
+                ImageShowingComponent img = new ImageShowingComponent(new int[]{x,y}, null);
 
                 center.add(img);
-                id1++;
             }
         }
 

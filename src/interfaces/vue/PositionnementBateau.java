@@ -3,7 +3,6 @@ package interfaces.vue;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
 
 public class PositionnementBateau extends JFrame {
 
@@ -19,12 +18,19 @@ public class PositionnementBateau extends JFrame {
     private JButton jouer;
     private JButton bouton1;
     private JButton bouton2;
-    private ArrayList<ImageShowingComponent> listCase;
+    private ImageShowingComponent[][] listCase;
 
     public PositionnementBateau(String titre){
         super (titre);
 
-        listCase = new ArrayList<>();
+        listCase = new ImageShowingComponent[10][];
+
+        for (int i = 0; i < 10; i++){
+            listCase[i] = new ImageShowingComponent[10];
+        }
+
+
+
         bateauSelected = new boolean[]{false, false, false, false, false};
 
         JPanel principal = new JPanel();
@@ -75,8 +81,10 @@ public class PositionnementBateau extends JFrame {
             jeu1.add(new JLabel(text));
             for (int y=0; y<10; y++){
 
-                ImageShowingComponent img = new ImageShowingComponent(id, this);
-                listCase.add(img);
+                ImageShowingComponent img = new ImageShowingComponent(new int[]{x,y}, this);
+
+                listCase[x][y] = img;
+
                 jeu1.add(img);
                 id++;
             }
@@ -200,7 +208,7 @@ public class PositionnementBateau extends JFrame {
     }
 
 
-    public ArrayList<ImageShowingComponent> getCaselist(){
+    public ImageShowingComponent[][] getCaselist(){
         return this.listCase;
     }
 
@@ -240,7 +248,16 @@ public class PositionnementBateau extends JFrame {
         return bateau5;
     }
 
+    public void resetButton(){
+        bateau1.setEnabled(true);
+        bateau2.setEnabled(true);
+        bateau3.setEnabled(true);
+        bateau4.setEnabled(true);
+        bateau5.setEnabled(true);
+    }
+
     public String getPseudo() {
         return pseudo.getText();
     }
+
 }

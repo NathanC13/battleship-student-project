@@ -13,34 +13,36 @@ import java.util.ArrayList;
 public class ImageShowingComponent extends JComponent {
 
     private Image img;
-    private int id;
+    private int[] id;
     private PositionnementBateau fenetre;
 
     private MouseListener listener = new MouseAdapter() {
         public void mouseClicked(MouseEvent e) {
-            System.out.println(id);
-
-            ArrayList<ImageShowingComponent> list = fenetre.getCaselist();
-
+            System.out.println("id: " + id[0] + " " +id[1]);
+            ;
+            ImageShowingComponent[][] list = fenetre.getCaselist();
 
 
             int nombre_case = fenetre.getBateauSelected() + 1;
 
+            System.out.println(nombre_case);
 
+            System.out.println(list.length);
+            System.out.println(list[0].length);
 
-            if (fenetre.getBateauSelected()!=-1) {
-                int nombre = id+nombre_case;
+            if (fenetre.getBateauSelected()!=-1 && id[1] + nombre_case<10) {
+
                     try {
-                        img = ImageIO.read(new File("./img/case_bateau.png"));
-
+                        Image image1 = ImageIO.read(new File("./img/case_bateau.png"));
+                        for (int i = 0; i < nombre_case; i++) {
+                            ImageShowingComponent case0 = list[id[0]][id[1]+i];
+                            case0.img = image1;
+                        }
                     } catch (IOException exception) {
                         exception.printStackTrace();
                     }
 
-                    for (int i = 0; i < nombre_case; i++) {
-                        ImageShowingComponent case0 = list.get(id - 1 + i);
-                        case0.img = img;
-                    }
+
             }
 
 
@@ -50,7 +52,7 @@ public class ImageShowingComponent extends JComponent {
         }
     };
 
-    ImageShowingComponent(int id, PositionnementBateau fenetre) {
+    ImageShowingComponent(int[] id, PositionnementBateau fenetre) {
         addMouseListener(listener);
         this.id = id;
         this.fenetre = fenetre;
@@ -71,5 +73,9 @@ public class ImageShowingComponent extends JComponent {
     // should be. We'll want to make this component the same size as the `img`.
     public Dimension getPreferredSize() {
         return new Dimension(img.getWidth(null), img.getHeight(null));
+    }
+
+    public void setImg(Image img) {
+        this.img = img;
     }
 }
