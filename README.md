@@ -8,12 +8,12 @@ Nous avions à coeurs de créer notre propre identité visuelle à travers diff�
 ## Menu
 ![](img/Menu.png)
 
-Notre menu a été créer de manière à capter l'attention du joueur avec le logo en figure de proue. Il propose plusieurs fonctonnalités comme le bouton 'informations' qui donne toutes les infos nécessaires pour comprendre les règles du jeu ainsi que ses différents modes.
+Notre menu a été crée de manière à capter l'attention du joueur avec le logo en figure de proue. Il propose plusieurs fonctonnalités comme le bouton 'informations' qui donne toutes les infos nécessaires pour comprendre les règles du jeu ainsi que ses différents modes.
 
-Les deux boutons centrales sont les plus importants, permettant de commencé le jeu ou tout simplement de quitter le jeu.
+Les deux boutons centraux sont les plus importants, permettant de commencer le jeu ou tout simplement de quitter le jeu.
 On retrouve aussi le logo BeeYard (notre signature). 
 
-En bas se trouve une petite phrase de présentation ainsi que le choix entre la version française du jeu et sa version belge. Il suffit de séléctionner la version souhaité.
+En bas, se trouve une petite phrase de présentation ainsi que le choix entre la version française du jeu et sa version belge. Il suffit de séléctionner la version souhaité.
 
 ## Placement des bateaux
 Après avoir cliquer sur 'Nouvelle partie' dans le menu, on se retrouve sur la page de placement des bateaux.
@@ -34,13 +34,35 @@ Settings lance une nouvelle fenêtre permettant plusieurs choix.
 
 ![](img/Settings.png)
 
-On peut donc redémarrer le jeu à l'aide du bouton 'Restart a Game' ou encore quitter le jeu avec 'Quit the game'.
+On peut donc quitter le jeu à l'aide du bouton 'Quit the Game'.
 Cliquez sur 'Back to the Game' pour revenir au jeu.
 
+Ensuite il y a le bouton 'Help'.
+
+![](img/Help.png)
+
+Ce bouton indique des informations pertinentes pour le joueur.
 
 ## Rejoindre une partie
 
- 
+Une fois vos bateaux placés, le joueur accéde à un nouveau menu.
+
+![](img/Menu_Rejoindre.png)
+
+Ce menu offre le choix de rejoindre une partie déja créée ou de créer une partie.
+
+Si le joueur clique sur 'Rejoindre une partie", il accède à cette fenêtre : 
+
+![](img/Rejoindre.png)
+
+Il retrouve à gauche la liste des serveurs déja existants. Il lui suffit de sélectionner un serveur et de cliquer sur 'Rejoindre' pour accéder à la partie.
+
+Au contraire, si le joueur souhaite créer une partie, il accède à cette fenêtre :
+
+![](img/Créer.png)
+
+Le joueur rentre un nom pour son serveur et il peut ensuite accéder à la partie.
+
 ## Gameplay
 
 
