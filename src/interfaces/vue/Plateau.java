@@ -2,6 +2,7 @@ package interfaces.vue;
 
 
 import interfaces.Joueur;
+import interfaces.controleurs.positionnementBateau.PlayGameControleur;
 
 import javax.swing.*;
 import java.awt.*;
@@ -15,7 +16,7 @@ public class Plateau extends JFrame{
     private JButton setting;
     private PlateauImageComponent[][] listCase;
 
-    public Plateau(String titre, PositionnementBateau positionnementBateau){
+    public Plateau(String titre, PositionnementBateau positionnementBateau, ServeurChoix serveurChoix, PlayGameControleur playGameControleur){
         super(titre);
 
         listCase = new PlateauImageComponent[10][];
@@ -54,7 +55,7 @@ public class Plateau extends JFrame{
         for (int x=0; x<10; x++){
             for (int y=0; y<10; y++){
 
-                ImageShowingComponent img = new ImageShowingComponent(new int[]{x,y}, null, null);
+                JeuImageComponent img = new JeuImageComponent(new int[]{x,y}, this, positionnementBateau, serveurChoix, playGameControleur);
 
                 east.add(img);
             }

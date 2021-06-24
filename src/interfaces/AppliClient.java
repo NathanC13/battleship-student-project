@@ -18,9 +18,10 @@ public class AppliClient {
         MenuPrincipal fenetre = new MenuPrincipal("BattleShip Beeyard Edition© - Menu Principal ");
         PositionnementBateau positionnementBateau = new PositionnementBateau("BattleShip Beeyard Edition© - Choix des placements de bateaux ", joueur);
         Settings settings = new Settings("Settings ");
-        Plateau plateau = new Plateau("BattleShip Beeyard Edition© - Jeu en cours ", positionnementBateau);
+
         CreerOuRejoindre CreerOuRejoindre = new CreerOuRejoindre("BattleShip Beeyard Edition© - Choix du mode ");
         ServeurChoix serveurChoix = new ServeurChoix("BattleShip Beeyard Edition© - Choix du serveur");
+
         CreationServeur creationServeur = new CreationServeur("BattleShip Beeyard Edition© - Choix du serveur");
         QuitterControleur quitterControleur = new QuitterControleur(fenetre);
         fenetre.fixeListenerQuitter(quitterControleur);
@@ -54,7 +55,7 @@ public class AppliClient {
         positionnementBateau.fixeListenerBateau5(bateau5Controleur);
 
 
-
+        Plateau plateau = new Plateau("BattleShip Beeyard Edition© - Jeu en cours ", positionnementBateau, serveurChoix, playGameControleur);
 
 
         BackControleur backControleur = new BackControleur(settings);

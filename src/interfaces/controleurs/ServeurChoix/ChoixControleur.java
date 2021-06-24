@@ -35,6 +35,7 @@ public class ChoixControleur implements ActionListener {
     private Player p;
     private PlayGameControleur playGameControleur;
     private CreationServeurControleur creationServeurControleur;
+    private Game game;
 
 
     public ChoixControleur(ServeurChoix serveurChoix, Plateau plateau, PositionnementBateau positionnementBateau, PlayGameControleur playGameControleur, CreationServeurControleur creationServeurControleur){
@@ -79,7 +80,7 @@ public class ChoixControleur implements ActionListener {
             unirestException.printStackTrace();
         }
 
-
+        this.game = theGame;
         
         
         PlateauImageComponent[][] list = plateau.getCaselist();
@@ -121,5 +122,9 @@ public class ChoixControleur implements ActionListener {
 
         this.serveurChoix.dispose();
         this.plateau.setVisible(true);
+    }
+
+    public Game getGame() {
+        return game;
     }
 }

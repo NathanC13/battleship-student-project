@@ -15,6 +15,7 @@ public class Bateau1Controleur implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+
         fenetre.setBateauSelected(true,0);
         fenetre.getBateau1().setEnabled(false);
 

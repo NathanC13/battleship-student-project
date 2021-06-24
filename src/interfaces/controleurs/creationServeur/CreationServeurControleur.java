@@ -30,6 +30,7 @@ public class CreationServeurControleur implements ActionListener {
     private PositionnementBateau positionnementBateau;
     private Joueur joueur;
     private PlayGameControleur playGameControleur;
+    private Game game;
 
     public CreationServeurControleur(CreationServeur creationServeur, Plateau plateau, PositionnementBateau positionnementBateau, PlayGameControleur playGameControleur){
 
@@ -49,7 +50,7 @@ public class CreationServeurControleur implements ActionListener {
             System.out.println("FLOTTE" + joueur.getFlotte());
             System.out.println("PLAYER: " + playGameControleur.getP().getName());
 
-            Game game = Network.initNewGame("http://37.187.38.219/api/v0", playGameControleur.getP(), joueur.getFlotte());
+            game = Network.initNewGame("http://37.187.38.219/api/v0", playGameControleur.getP(), joueur.getFlotte());
             System.out.println("ID: " + game.getId());
         } catch (UnirestException | UncompleteFleetException | BadCoordException unirestException) {
             unirestException.printStackTrace();
@@ -104,5 +105,9 @@ public class CreationServeurControleur implements ActionListener {
 
     public Joueur getJoueur() {
         return joueur;
+    }
+
+    public Game getGame() {
+        return game;
     }
 }
