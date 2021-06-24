@@ -16,7 +16,7 @@ public class    FrancaisControleur implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        System.out.println("nique ta mère");
+        System.out.println("Passage du jeu en version Belge.");
 
 
     }
