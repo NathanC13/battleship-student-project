@@ -8,12 +8,12 @@ Nous avions à coeurs de créer notre propre identité visuelle à travers diff�
 ## Menu
 ![](img/Menu.png)
 
-Notre menu a été créer de manière à capter l'attention du joueur avec le logo en figure de proue. Il propose plusieurs fonctonnalités comme le bouton 'informations' qui donne toutes les infos nécessaires pour comprendre les règles du jeu ainsi que ses différents modes.
+Notre menu a été crée de manière à capter l'attention du joueur avec le logo en figure de proue. Il propose plusieurs fonctonnalités comme le bouton 'informations' qui donne toutes les infos nécessaires pour comprendre les règles du jeu ainsi que ses différents modes.
 
-Les deux boutons centrales sont les plus importants, permettant de commencé le jeu ou tout simplement de quitter le jeu.
+Les deux boutons centraux sont les plus importants, permettant de commencer le jeu ou tout simplement de quitter le jeu.
 On retrouve aussi le logo BeeYard (notre signature). 
 
-En bas se trouve une petite phrase de présentation ainsi que le choix entre la version française du jeu et sa version belge. Il suffit de séléctionner la version souhaité.
+En bas, se trouve une petite phrase de présentation ainsi que le choix entre la version française du jeu et sa version belge. Il suffit de séléctionner la version souhaité.
 
 ## Placement des bateaux
 Après avoir cliquer sur 'Nouvelle partie' dans le menu, on se retrouve sur la page de placement des bateaux.
