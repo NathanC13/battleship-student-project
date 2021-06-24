@@ -18,6 +18,7 @@ public class PlayGameControleur implements ActionListener {
 
     private PositionnementBateau positionnementBateau;
     private CreerOuRejoindre CreerOuRejoindre;
+    private Player p;
 
     public PlayGameControleur(PositionnementBateau positionnementBateau, CreerOuRejoindre CreerOuRejoindre){
         this.positionnementBateau = positionnementBateau;
@@ -29,17 +30,22 @@ public class PlayGameControleur implements ActionListener {
 
 
         //création du joueur
-        Player p = new Player(positionnementBateau.getJoueur().getPseudo());
+        this.p = new Player(positionnementBateau.getPseudo());
+        System.out.println("INSCRIPTION: " + p.toString());
         //inscription du joueur
-     //  try {
-         //   Network.suscribeNewPlayer(null,p); //"http://37.187.38.219/api/v0"
-       // } catch (UnirestException unirestException) {
-         //   unirestException.printStackTrace();
-       // }
+       try {
+            Network.suscribeNewPlayer("http://37.187.38.219/api/v0",p); //"http://37.187.38.219/api/v0"
+       } catch (UnirestException unirestException) {
+            unirestException.printStackTrace();
+       }
 
         positionnementBateau.getJoueur().setPseudo(positionnementBateau.getPseudo());
 
         this.CreerOuRejoindre.setVisible(true);
         this.positionnementBateau.dispose();
+    }
+
+    public Player getP() {
+        return p;
     }
 }

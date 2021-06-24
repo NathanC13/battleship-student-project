@@ -1,8 +1,15 @@
 package interfaces.controleurs.creationServeur;
 
+import com.mashape.unirest.http.exceptions.UnirestException;
+import info1.network.Game;
+import info1.network.Network;
+import info1.network.Player;
+import info1.ships.BadCoordException;
 import info1.ships.ICoord;
 import info1.ships.IShip;
+import info1.ships.UncompleteFleetException;
 import interfaces.Joueur;
+import interfaces.controleurs.positionnementBateau.PlayGameControleur;
 import interfaces.vue.CreationServeur;
 import interfaces.vue.Plateau;
 import interfaces.vue.PlateauImageComponent;
@@ -22,17 +29,31 @@ public class CreationServeurControleur implements ActionListener {
     private Plateau plateau;
     private PositionnementBateau positionnementBateau;
     private Joueur joueur;
-    public CreationServeurControleur(CreationServeur creationServeur, Plateau plateau, PositionnementBateau positionnementBateau){
+    private PlayGameControleur playGameControleur;
+
+    public CreationServeurControleur(CreationServeur creationServeur, Plateau plateau, PositionnementBateau positionnementBateau, PlayGameControleur playGameControleur){
 
         this.creationServeur = creationServeur;
         this.plateau = plateau;
         this.positionnementBateau = positionnementBateau;
         this.joueur = positionnementBateau.getJoueur();
+        this.playGameControleur = playGameControleur;
+
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
 
+
+        try {
+            System.out.println("FLOTTE" + joueur.getFlotte());
+            System.out.println("PLAYER: " + playGameControleur.getP().getName());
+
+            Game game = Network.initNewGame("http://37.187.38.219/api/v0", playGameControleur.getP(), joueur.getFlotte());
+            System.out.println("ID: " + game.getId());
+        } catch (UnirestException | UncompleteFleetException | BadCoordException unirestException) {
+            unirestException.printStackTrace();
+        }
 
 
 
@@ -56,7 +77,7 @@ public class CreationServeurControleur implements ActionListener {
                     for (int bateau = 0; bateau<listCoord.size(); bateau++)
                         try {
                             Image img = ImageIO.read(new File("./img/cases_brouillon/case_bateau.png"));
-                            if ((list[x][y].getId()[0] == listCoord.get(bateau).getX()) && (list[x][y].getId()[1] == listCoord.get(bateau).getY())){
+                            if ((list[x][y].getId()[0]+1 == listCoord.get(bateau).getX()) && (list[x][y].getId()[1]+1 == listCoord.get(bateau).getY())){
                                 list[y][x].setImg(img);
                             }
                         } catch (IOException exception) {

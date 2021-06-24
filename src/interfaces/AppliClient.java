@@ -61,7 +61,7 @@ public class AppliClient {
         settings.fixeListenerBack(backControleur);
         RestartControleur restartControleur = new RestartControleur(settings);
         settings.fixeListenerRestart(restartControleur);
-        QuitterSettingsControleur quitterSettingsControleur = new QuitterSettingsControleur(settings);
+        QuitterSettingsControleur quitterSettingsControleur = new QuitterSettingsControleur(settings, positionnementBateau, CreerOuRejoindre, plateau, serveurChoix, fenetre);
         settings.fixeListenerQuitter(quitterSettingsControleur);
 
 
@@ -75,7 +75,7 @@ public class AppliClient {
         CreerOuRejoindre.fixeListenerCreerServeur(creer);
 
         // listener creation serveur
-        CreationServeurControleur creationServeurControleur = new CreationServeurControleur(creationServeur, plateau, positionnementBateau);
+        CreationServeurControleur creationServeurControleur = new CreationServeurControleur(creationServeur, plateau, positionnementBateau, playGameControleur);
         creationServeur.fixeListenerCreationServeur(creationServeurControleur);
 
         ChoixControleur choixServeur = new ChoixControleur(serveurChoix,plateau, positionnementBateau);

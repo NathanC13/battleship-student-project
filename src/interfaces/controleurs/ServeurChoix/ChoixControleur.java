@@ -26,13 +26,11 @@ public class ChoixControleur implements ActionListener {
 
     private ServeurChoix serveurChoix;
     private Plateau plateau;
-    private Joueur joueur;
     private PositionnementBateau positionnementBateau;
 
     public ChoixControleur(ServeurChoix serveurChoix, Plateau plateau, PositionnementBateau positionnementBateau){
         this.serveurChoix = serveurChoix;
         this.plateau = plateau;
-        this.joueur = positionnementBateau.getJoueur();
     }
 
     @Override
@@ -42,7 +40,7 @@ public class ChoixControleur implements ActionListener {
         PlateauImageComponent[][] list = plateau.getCaselist();
 
 
-        List<IShip> listBateau = joueur.getFlotte().getShips();
+        List<IShip> listBateau = positionnementBateau.getJoueur().getFlotte().getShips();
 
         System.out.println(listBateau.size());
 
@@ -58,6 +56,7 @@ public class ChoixControleur implements ActionListener {
                     for (int bateau = 0; bateau<listCoord.size(); bateau++)
                         try {
                             Image img = ImageIO.read(new File("./img/cases_brouillon/case_bateau.png"));
+                            System.out.println("TEST: " + list[x][y].getId()[0] + " " + list[x][y].getId()[1]);
                             if ((list[x][y].getId()[0] == listCoord.get(bateau).getX()) && (list[x][y].getId()[1] == listCoord.get(bateau).getY())){
                                 list[y][x].setImg(img);
                             }

@@ -14,7 +14,7 @@ public class Joueur {
     }
 
     public NavyFleet getFlotte() {
-        return flotte;
+        return this.flotte;
     }
 
     public void addFlotte(Ship ship){
@@ -23,10 +23,6 @@ public class Joueur {
 
     public void clearFlotte(){
         this.flotte = new NavyFleet();
-    }
-
-    public String getPseudo() {
-        return pseudo;
     }
 
     public void setPseudo(String pseudo) {
