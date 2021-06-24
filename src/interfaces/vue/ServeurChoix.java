@@ -54,7 +54,7 @@ public class ServeurChoix extends JFrame {
         panelprincipal.add(centerButtonPanel, BorderLayout.CENTER);
 
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        this.setPreferredSize(new Dimension(700,500));
+        this.setPreferredSize(new Dimension(900,700));
         this.setContentPane(panelprincipal);
     }
 }
