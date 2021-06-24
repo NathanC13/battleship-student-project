@@ -101,4 +101,8 @@ public class CreationServeurControleur implements ActionListener {
         creationServeur.dispose();
 
     }
+
+    public Joueur getJoueur() {
+        return joueur;
+    }
 }

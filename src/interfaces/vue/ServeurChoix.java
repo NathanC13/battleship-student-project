@@ -31,8 +31,8 @@ public class ServeurChoix extends JFrame {
         panelgauche.setLayout(new GridLayout(0,1,5,10));
 
         //récupération des id des parties joignables
-        Network.setProxy("srv-proxy-etu-2.iut-nantes.univ-nantes.prive", 3128);
-        Network.enableProxy(true);
+        //Network.setProxy("srv-proxy-etu-2.iut-nantes.univ-nantes.prive", 3128);
+        //Network.enableProxy(true);
         try {
             List<Game> game = Network.listInitializedGames("http://37.187.38.219/api/v0");
             id = new int[game.size()];
@@ -55,6 +55,8 @@ public class ServeurChoix extends JFrame {
         } catch (UnirestException e) {
             e.printStackTrace();
         }
+
+
 
         panelprincipal.add(new JScrollPane(panelgauche),BorderLayout.WEST);
 

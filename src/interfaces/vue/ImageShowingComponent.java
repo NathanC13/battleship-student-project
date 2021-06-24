@@ -29,8 +29,7 @@ public class ImageShowingComponent extends JComponent {
 
             boolean horizontale = true;
             boolean vertical = true;
-
-
+            
 
             int nombre_case = fenetre.getBateauSelected() + 1;
 
