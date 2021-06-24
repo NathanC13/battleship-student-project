@@ -61,35 +61,37 @@ public class ImageShowingComponent extends JComponent {
             if (fenetre.getBateauSelected()!=-1) {
 
                 System.out.println(Character.toString((char) id[1]+65) +((id[0]+1)) + " " + Character.toString((char) id[1]+65) +((id[0]+1)));
+                System.out.println(a);
+                System.out.println(b);
 
                 if (fenetre.getBateauSelected() == 0){
                     try {
-                        boat = new Submarine("submarine" + Character.toString((char) id[1]+65) +id[0], Character.toString((char) id[1]+65) +(id[0]+1));
+                        boat = new Submarine("submarine" + a +""+b, a);
                     } catch (BadCoordException | CoordsBadShipException badCoordException) {
                         badCoordException.printStackTrace();
                     }
                 } else if (fenetre.getBateauSelected() == 1){
                     try {
-                        boat = new Destroyer("destroyer" + Character.toString((char) id[1]+65) +id[0], a, b);
+                        boat = new Destroyer("destroyer" + a +""+b, a, b);
                         System.out.println(boat.getCoords());
                     } catch (BadCoordException | CoordsBadShipException badCoordException) {
                         badCoordException.printStackTrace();
                     }
                 } else if (fenetre.getBateauSelected() == 2) {
                     try {
-                        boat = new Cruiser("cruiser" + Character.toString((char) id[1]+65) +id[0], Character.toString((char) id[1]+65) +((id[0]+1)), Character.toString((char) id[1]+65) +((id[0]+1)+nombre_case-1));
+                        boat = new Cruiser("cruiser" + a +"" +b, a,b);
                     } catch (BadCoordException | CoordsBadShipException badCoordException) {
                         badCoordException.printStackTrace();
                     }
                 } else if (fenetre.getBateauSelected() == 3) {
                     try {
-                        boat = new Battleship("battleship" + Character.toString((char) id[1]+65) +id[0], Character.toString((char) id[1]+65) +((id[0]+1)), Character.toString((char) id[1]+65) +((id[0]+1)+nombre_case-1));
+                        boat = new Battleship("battleship" + a+ "" +b, a,b);
                     } catch (BadCoordException | CoordsBadShipException badCoordException) {
                         badCoordException.printStackTrace();
                     }
                 } else if (fenetre.getBateauSelected() == 4) {
                     try {
-                        boat = new AircraftCarrier("aircraftcarrier" + Character.toString((char) id[1]+65) +id[0], Character.toString((char) id[1]+65) +((id[0]+1)), Character.toString((char) id[1]+65) +((id[0]+1)+nombre_case-1));
+                        boat = new AircraftCarrier("aircraftcarrier" + a +"" +b, a,b);
                     } catch (BadCoordException | CoordsBadShipException badCoordException) {
                         badCoordException.printStackTrace();
                     }
