@@ -3,7 +3,7 @@
 
 BeeYard fait référence aux nombreux projet de notre groupe, que l'on considère comme notre signature.
 ## Présentation rapide 
-Nous avions à coeurs de créer notre propre identité visuelle à travers différents éléments comme le logo, les bateaux, le plateau mais surtout grâce à ce trailer ci-dessous (de notre propre industrie): https://youtu.be/hwq1m7cqfkU  
+Nous avions à coeurs de créer notre propre identité visuelle à travers différents éléments comme le logo, les bateaux, le plateau mais surtout grâce à ce trailer ci-dessous (de notre propre industrie) : [ https://youtu.be/hwq1m7cqfkU : BATTLESHIP BeeYard Edition TRAILER 2021 ]  
 [Source : trailer world of warship]
 ## Menu
 ![](img/Menu.png)
@@ -17,6 +17,7 @@ En bas se trouve une petite phrase de présentation ainsi que le choix entre la 
 
 ## Placement des bateaux
 Après avoir cliquer sur 'Nouvelle partie' dans le menu, on se retrouve sur la page de placement des bateaux.
+
 ![](img/Placer_bateaux.png)
 
 Le plateau apparaît donc avec les différents bateaux de la version sélectionné (ici la version française). Il suffit de choisir le bateau voulu et de cliquer sur le plateau pour le placer à l'endroit souhaité. La case du bateau se grise une fois placé. Une checkbox permettant de choisir la position verticale se touve au-dessus des bateaux pour permettre de les mettres en position verticale. Les cases où sont placés les bateaux se grisent aussi.
