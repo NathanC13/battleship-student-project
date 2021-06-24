@@ -78,7 +78,7 @@ public class AppliClient {
         CreationServeurControleur creationServeurControleur = new CreationServeurControleur(creationServeur, plateau, positionnementBateau);
         creationServeur.fixeListenerCreationServeur(creationServeurControleur);
 
-        ChoixControleur choixServeur = new ChoixControleur(serveurChoix,plateau);
+        ChoixControleur choixServeur = new ChoixControleur(serveurChoix,plateau, positionnementBateau);
         serveurChoix.fixeListenerChoixControleur(choixServeur);
 
 
