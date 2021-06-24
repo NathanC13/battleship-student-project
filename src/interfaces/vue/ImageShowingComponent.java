@@ -98,7 +98,6 @@ public class ImageShowingComponent extends JComponent {
                 }
 
 
-
                     try {
                         Image image1 = ImageIO.read(new File("./img/cases_brouillon/case_bateau.png"));
                         for (int i = 0; i < nombre_case; i++) {
@@ -113,7 +112,7 @@ public class ImageShowingComponent extends JComponent {
                                 ImageShowingComponent case0 = list[id[0]][id[1] + i];
                                 case0.img = image1;
                                 case0.setType(1);
-
+                                joueur.addFlotte(boat);
                             }
                         }
                     } catch (IOException exception) {
@@ -122,7 +121,7 @@ public class ImageShowingComponent extends JComponent {
 
             }
 
-
+            System.out.println(joueur.getFlotte());
             fenetre.invalidate(); //actualise la fenetre
             fenetre.validate();
             fenetre.repaint();

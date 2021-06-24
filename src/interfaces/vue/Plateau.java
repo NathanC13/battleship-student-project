@@ -1,8 +1,9 @@
 package interfaces.vue;
 
 
+import interfaces.Joueur;
+
 import javax.swing.*;
-import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.event.ActionListener;
 
@@ -12,9 +13,16 @@ public class Plateau extends JFrame{
 
     private JButton help;
     private JButton setting;
+    private PlateauImageComponent[][] listCase;
 
-    public Plateau(String titre){
+    public Plateau(String titre, PositionnementBateau positionnementBateau){
         super(titre);
+
+        listCase = new PlateauImageComponent[10][];
+
+        for (int i = 0; i < 10; i++){
+            listCase[i] = new PlateauImageComponent[10];
+        }
 
         JPanel plateau = new JPanel();
         plateau.setLayout(new BorderLayout());
@@ -57,8 +65,9 @@ public class Plateau extends JFrame{
         for (int x=0; x<10; x++){
             for (int y=0; y<10; y++){
 
-                ImageShowingComponent img = new ImageShowingComponent(new int[]{x,y}, null, null);
+                PlateauImageComponent img = new PlateauImageComponent(new int[]{x,y}, this, positionnementBateau);
 
+                listCase[x][y] = img;
                 center.add(img);
             }
         }
@@ -99,4 +108,10 @@ public class Plateau extends JFrame{
     public void fixeListenerHelp(ActionListener action){
         help.addActionListener(action);
     }
+
+    public PlateauImageComponent[][] getCaselist() {
+        return this.listCase;
+    }
+
+
 }
