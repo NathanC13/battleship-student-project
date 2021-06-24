@@ -13,6 +13,10 @@ import java.util.List;
 
 public class ServeurChoix extends JFrame {
     JButton okButton;
+    JRadioButton jrb = null;
+    private int[] id;
+    private JRadioButton[] radioButtons;
+    private ArrayList<JRadioButton> array = new ArrayList<>();
 
 
     public ServeurChoix(String titre){
@@ -27,20 +31,26 @@ public class ServeurChoix extends JFrame {
         panelgauche.setLayout(new GridLayout(0,1,5,10));
 
         //récupération des id des parties joignables
-        //Network.setProxy("srv-proxy-etu-2.iut-nantes.univ-nantes.prive", 3128);
-        //Network.enableProxy(true);
+        Network.setProxy("srv-proxy-etu-2.iut-nantes.univ-nantes.prive", 3128);
+        Network.enableProxy(true);
         try {
             List<Game> game = Network.listInitializedGames("http://37.187.38.219/api/v0");
+            id = new int[game.size()];
+            radioButtons = new JRadioButton[game.size()];
             for (int i=0;i<game.size();i++){
-                game.get(i).getId();
+
+                id[i] = game.get(i).getId();
+
             }
             List<JRadioButton> list = new ArrayList<>();
             ButtonGroup bg = new ButtonGroup();
             for (Game games : game){
-                JRadioButton jrb = new JRadioButton(games.toString());
+                jrb = new JRadioButton(games.toString());
                 list.add(jrb);
                 bg.add(jrb);
                 panelgauche.add(jrb);
+                array.add(jrb);
+
             }
         } catch (UnirestException e) {
             e.printStackTrace();
@@ -62,5 +72,13 @@ public class ServeurChoix extends JFrame {
     }
     public void fixeListenerChoixControleur(ActionListener action){
         okButton.addActionListener(action);
+    }
+
+    public int[] getId() {
+        return id;
+    }
+
+    public ArrayList<JRadioButton> getArray() {
+        return array;
     }
 }
