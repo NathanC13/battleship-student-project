@@ -41,9 +41,28 @@ Ensuite il y a le bouton 'Help'.
 
 ![](img/Help.png)
 
+Ce bouton indique des informations pertinentes pour le joueur.
+
 ## Rejoindre une partie
 
- 
+Une fois vos bateaux placés, le joueur accéde à un nouveau menu.
+
+![](img/Menu_Rejoindre.png)
+
+Ce menu offre le choix de rejoindre une partie déja créée ou de créer une partie.
+
+Si le joueur clique sur 'Rejoindre une partie", il accède à cette fenêtre : 
+
+![](img/Rejoindre.png)
+
+Il retrouve à gauche la liste des serveurs déja existants. Il lui suffit de sélectionner un serveur et de cliquer sur 'Rejoindre' pour accéder à la partie.
+
+Au contraire, si le joueur souhaite créer une partie, il accède à cette fenêtre :
+
+![](img/Créer.png)
+
+Le joueur rentre un nom pour son serveur et il peut ensuite accéder à la partie.
+
 ## Gameplay
 
 
