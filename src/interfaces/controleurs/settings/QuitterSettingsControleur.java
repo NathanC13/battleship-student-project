@@ -32,6 +32,7 @@ public class QuitterSettingsControleur implements ActionListener {
         this.creerourej.dispose();
         this.servchoix.dispose();
         this.plateau.dispose();
-        this.menu.setVisible(true);
+        this.menu.dispose();
+        System.exit(-1);
     }
 }
