@@ -34,6 +34,8 @@ Settings lance une nouvelle fenêtre permettant plusieurs choix.
 
 ![](img/Settings.png)
 
+On peut donc redémarrer le jeu à l'aide du bouton 'Restart a Game' ou encore quitter le jeu avec 'Quit the game'.
+Cliquez sur 'Back to the Game' pour revenir au jeu.
 
 
 ## Rejoindre une partie
