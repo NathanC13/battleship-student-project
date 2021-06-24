@@ -2,6 +2,7 @@ package interfaces.vue;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionListener;
 
 public class CreationServeur extends JFrame {
 
@@ -65,5 +66,9 @@ public class CreationServeur extends JFrame {
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         this.setPreferredSize(new Dimension(700,500));
         this.setContentPane(menuprincipal);
+    }
+
+    public void fixeListenerCreationServeur(ActionListener action){
+        bouton1.addActionListener(action);
     }
 }

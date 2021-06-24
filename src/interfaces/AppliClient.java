@@ -1,5 +1,6 @@
 package interfaces;
 
+import interfaces.controleurs.creationServeur.CreationServeurControleur;
 import interfaces.controleurs.menu.*;
 import interfaces.controleurs.CreerOuRejoindre.*;
 import interfaces.controleurs.ServeurChoix.*;
@@ -17,7 +18,7 @@ public class AppliClient {
         MenuPrincipal fenetre = new MenuPrincipal("BattleShip Beeyard Edition© - Menu Principal ");
         PositionnementBateau positionnementBateau = new PositionnementBateau("BattleShip Beeyard Edition© - Choix des placements de bateaux ", joueur);
         Settings settings = new Settings("Settings ");
-        Plateau plateau = new Plateau("BattleShip Beeyard Edition© - Jeu en cours ");
+        Plateau plateau = new Plateau("BattleShip Beeyard Edition© - Jeu en cours ", joueur);
         CreerOuRejoindre CreerOuRejoindre = new CreerOuRejoindre("BattleShip Beeyard Edition© - Choix du mode ");
         ServeurChoix serveurChoix = new ServeurChoix("BattleShip Beeyard Edition© - Choix du serveur");
         CreationServeur creationServeur = new CreationServeur("BattleShip Beeyard Edition© - Choix du serveur");
@@ -73,7 +74,9 @@ public class AppliClient {
         CreerControleur creer = new CreerControleur(CreerOuRejoindre, creationServeur);
         CreerOuRejoindre.fixeListenerCreerServeur(creer);
 
-
+        // listener creation serveur
+        CreationServeurControleur creationServeurControleur = new CreationServeurControleur(creationServeur, plateau);
+        creationServeur.fixeListenerCreationServeur(creationServeurControleur);
 
         ChoixControleur choixServeur = new ChoixControleur(serveurChoix,plateau);
         serveurChoix.fixeListenerChoixControleur(choixServeur);
