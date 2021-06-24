@@ -6,7 +6,7 @@ BeeYard fait référence aux nombreux projet de notre groupe, que l'on considèr
 Nous avions à coeurs de créer notre propre identité visuelle à trvers différents éléments comme le logo, les bateaux, le plateau mais surtout grâce à ce trailer ci-dessous : https://youtu.be/hwq1m7cqfkU
 Source : trailer world of warship
 ## Menu
-
+ferme bien ta gueule
 ## Placement des bateaux
 
 ## Rejoindre une partie
