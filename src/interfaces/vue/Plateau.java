@@ -69,7 +69,8 @@ public class Plateau extends JFrame{
         plateau.add(centre,BorderLayout.CENTER);
 
 
-
+        center.setBorder(BorderFactory.createTitledBorder("Vos bateaux : "));
+        east.setBorder(BorderFactory.createTitledBorder("Ciblage : "));
 
         plateau.add((sud),BorderLayout.SOUTH);
         plateau.add(nord,BorderLayout.NORTH);
