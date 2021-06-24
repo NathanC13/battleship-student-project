@@ -1,6 +1,7 @@
 package interfaces;
 
 import interfaces.controleurs.menu.*;
+import interfaces.controleurs.CreerOuRejoindre.*;
 import interfaces.controleurs.positionnementBateau.*;
 import interfaces.controleurs.settings.BackControleur;
 import interfaces.controleurs.settings.QuitterSettingsControleur;
@@ -16,7 +17,9 @@ public class AppliClient {
         PositionnementBateau positionnementBateau = new PositionnementBateau("BattleShip Beeyard Edition© - Choix des placements de bateaux ", joueur);
         Settings settings = new Settings("Settings ");
         Plateau plateau = new Plateau("BattleShip Beeyard Edition© - Jeu en cours ");
-
+        CreerOuRejoindre CreerOuRejoindre = new CreerOuRejoindre("BattleShip Beeyard Edition© - Choix du mode ");
+        ServeurChoix serveurChoix = new ServeurChoix("BattleShip Beeyard Edition© - Choix du serveur");
+        CreationServeur creationServeur = new CreationServeur("BattleShip Beeyard Edition© - Choix du serveur");
         QuitterControleur quitterControleur = new QuitterControleur(fenetre);
         fenetre.fixeListenerQuitter(quitterControleur);
         NewGameControleur newGameControleur = new NewGameControleur(fenetre, positionnementBateau);
@@ -31,7 +34,7 @@ public class AppliClient {
 
         SettingsControleur settingsControleur = new SettingsControleur(positionnementBateau, settings);
         positionnementBateau.fixeListenerSettings(settingsControleur);
-        PlayGameControleur playGameControleur = new PlayGameControleur(positionnementBateau, plateau);
+        PlayGameControleur playGameControleur = new PlayGameControleur(positionnementBateau,CreerOuRejoindre);
         positionnementBateau.fixeListenerPlay(playGameControleur);
         HelpControleur helpControleur = new HelpControleur();
         positionnementBateau.fixeListenerHelp(helpControleur);
@@ -50,6 +53,8 @@ public class AppliClient {
 
 
 
+
+
         BackControleur backControleur = new BackControleur(settings);
         settings.fixeListenerBack(backControleur);
         RestartControleur restartControleur = new RestartControleur(settings);
@@ -61,6 +66,12 @@ public class AppliClient {
         plateau.fixeListenerSettings(settingsControleur);
         plateau.fixeListenerHelp(helpControleur);
 
+        // listener pour rejoidnre ou creer
+        RejoindreControleur rej = new RejoindreControleur(CreerOuRejoindre,serveurChoix);
+        CreerOuRejoindre.fixeListenerRejoidnreControleur(rej);
+        CreerControleur creer = new CreerControleur(CreerOuRejoindre, creationServeur);
+        CreerOuRejoindre.fixeListenerCreerServeur(creer);
+
 
 
 
@@ -70,5 +81,8 @@ public class AppliClient {
         positionnementBateau.pack();
         fenetre.pack();
         fenetre.setVisible(true);
+        CreerOuRejoindre.pack();
+        serveurChoix.pack();
+        creationServeur.pack();
     }
 }

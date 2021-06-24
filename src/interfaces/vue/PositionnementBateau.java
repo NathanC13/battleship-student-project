@@ -153,7 +153,7 @@ public class PositionnementBateau extends JFrame {
 
 
         JPanel bas = new JPanel(new BorderLayout());
-        jouer = new JButton("JOUER");
+        jouer = new JButton("Continuer");
         JPanel bas1 = new JPanel(new FlowLayout());
         bas1.add(jouer);
         bas.add(bas1, BorderLayout.CENTER);

@@ -3,6 +3,7 @@ package interfaces.vue;
 import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
+import java.awt.event.ActionListener;
 
 public class CreerOuRejoindre extends JFrame {
 
@@ -64,5 +65,11 @@ public class CreerOuRejoindre extends JFrame {
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         this.setPreferredSize(new Dimension(700,500));
         this.setContentPane(menuprincipal);
+    }
+    public void fixeListenerCreerServeur(ActionListener action){
+        bouton2.addActionListener(action);
+    }
+    public void fixeListenerRejoidnreControleur(ActionListener action){
+        bouton1.addActionListener(action);
     }
 }
