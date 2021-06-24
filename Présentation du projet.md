@@ -26,17 +26,21 @@ On peut voir un champ permettant de rentrer son pseudo en haut à droite. Il ya 
 
 Il suffit ensuite de cliquer sur le bouton 'Continuer' pour passer à l'étape suivante !
 
+## Settings/Help
+
+Avant de passer à l'étape suivante, vous avez pu remarquer l'existence de 2 boutons situé en haut à droite de la fenêtre : Settings et Help.
+
+Settings lance une nouvelle fenêtre permettant plusieurs choix.
+
+![](img/Settings.png)
+
+
 
 ## Rejoindre une partie
+
  
 ## Gameplay
 
-## Settings/Help
 
 
 
-
-
-
-
-_Image du bateau issue de https://en.wikipedia.org/wiki/French_battleship_Brennus_
