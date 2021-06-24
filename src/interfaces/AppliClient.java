@@ -2,6 +2,7 @@ package interfaces;
 
 import interfaces.controleurs.menu.*;
 import interfaces.controleurs.CreerOuRejoindre.*;
+import interfaces.controleurs.ServeurChoix.*;
 import interfaces.controleurs.positionnementBateau.*;
 import interfaces.controleurs.settings.BackControleur;
 import interfaces.controleurs.settings.QuitterSettingsControleur;
@@ -71,6 +72,12 @@ public class AppliClient {
         CreerOuRejoindre.fixeListenerRejoidnreControleur(rej);
         CreerControleur creer = new CreerControleur(CreerOuRejoindre, creationServeur);
         CreerOuRejoindre.fixeListenerCreerServeur(creer);
+
+
+
+        ChoixControleur choixServeur = new ChoixControleur(serveurChoix,plateau);
+        serveurChoix.fixeListenerChoixControleur(choixServeur);
+
 
 
 

@@ -7,10 +7,13 @@ import info1.network.Network;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.List;
 
 public class ServeurChoix extends JFrame {
+    JButton okButton;
+
 
     public ServeurChoix(String titre){
         super(titre);
@@ -45,7 +48,7 @@ public class ServeurChoix extends JFrame {
 
         panelprincipal.add(new JScrollPane(panelgauche),BorderLayout.WEST);
 
-        JButton okButton = new JButton("Rejoindre");
+         okButton = new JButton("Rejoindre");
         okButton.setMargin(new Insets(20, 50, 20, 50));
         okButton.setFont(okButton.getFont().deriveFont(50f));
         JPanel centerButtonPanel = new JPanel(new GridBagLayout());
@@ -56,5 +59,8 @@ public class ServeurChoix extends JFrame {
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         this.setPreferredSize(new Dimension(900,700));
         this.setContentPane(panelprincipal);
+    }
+    public void fixeListenerChoixControleur(ActionListener action){
+        okButton.addActionListener(action);
     }
 }
