@@ -6,7 +6,7 @@
 BeeYard fait référence aux nombreux projets de notre groupe, que l'on considère comme notre signature.
 
 ## Présentation rapide 
-Nous avions à coeurs de créer notre propre identité visuelle à travers différents éléments comme le logo, les bateaux, le plateau mais surtout grâce à ce trailer ci-dessous (de notre propre industrie) : [  : BATTLESHIP BeeYard Edition TRAILER 2021 ]  
+Nous avions à coeurs de créer notre propre identité visuelle à travers différents éléments comme le logo, les bateaux, le plateau mais surtout grâce à ce trailer ci-dessous (de notre propre industrie) : [ https://youtu.be/4yDK0fpvun8 : BATTLESHIP BeeYard Edition TRAILER 2021 ]  
 [Source : trailer world of warship]
 ## Menu
 ![](img/Menu.png)
@@ -104,7 +104,7 @@ Si au contraire le joueur perd c'est l'écrans suivant qui apparaît :
 Voilà, vous connaissez maintenant tout de BATTLESHIP BeeYard Edition. 
 Il ne vous manque plus qu'à vous amuser sur le jeu.
 
-Enfin, n'oubliez pas de soutenir le Trailer du jeu, cela nous ferait extrêmement plaisir !
+Enfin, n'oubliez pas de soutenir le Trailer du jeu (https://youtu.be/4yDK0fpvun8), cela nous ferait extrêmement plaisir !
 
 
    
