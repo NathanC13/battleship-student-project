@@ -4,6 +4,7 @@ import interfaces.controleurs.creationServeur.CreationServeurControleur;
 import interfaces.controleurs.menu.*;
 import interfaces.controleurs.CreerOuRejoindre.*;
 import interfaces.controleurs.ServeurChoix.*;
+import interfaces.controleurs.plateaudejeu.Help2;
 import interfaces.controleurs.positionnementBateau.*;
 import interfaces.controleurs.settings.BackControleur;
 import interfaces.controleurs.settings.QuitterSettingsControleur;
@@ -41,6 +42,7 @@ public class AppliClient {
         PlayGameControleur playGameControleur = new PlayGameControleur(positionnementBateau,CreerOuRejoindre);
         positionnementBateau.fixeListenerPlay(playGameControleur);
         HelpControleur helpControleur = new HelpControleur();
+        Help2 help2 = new Help2();
         positionnementBateau.fixeListenerHelp(helpControleur);
         ClearControleur clearControleur = new ClearControleur(positionnementBateau,fenetre);
         positionnementBateau.fixeListenerClear(clearControleur);
@@ -68,7 +70,7 @@ public class AppliClient {
 
 
         plateau.fixeListenerSettings(settingsControleur);
-        plateau.fixeListenerHelp(helpControleur);
+        plateau.fixeListenerHelp2(help2);
 
         // listener pour rejoidnre ou creer
         RejoindreControleur rej = new RejoindreControleur(CreerOuRejoindre,serveurChoix);
