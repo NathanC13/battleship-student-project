@@ -83,7 +83,7 @@ Il y a différents type de cases :
 - celle dotée d'une flamme : le joueur a touché un bateau;
 - celle dotée d'une flamme sur fond rouge : le joueur a coulé un bateau;
 
-En bas de l'écran, on retrouve des compteurs avec le nombre de bateaux restants, de touchés, et de ratés.
+En bas de l'écran, on retrouve des compteurs avec le nombre de bateaux de touchés et le nombre de ratés.
 
 Le joueur gagne quand il a coulé tous les bateaux de son adversaire.
 
