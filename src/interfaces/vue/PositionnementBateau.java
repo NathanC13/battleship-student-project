@@ -29,32 +29,25 @@ public class PositionnementBateau extends JFrame {
         super (titre);
 
         listCase = new ImageShowingComponent[10][];
-
         this.joueur = joueur;
 
         for (int i = 0; i < 10; i++){
             listCase[i] = new ImageShowingComponent[10];
         }
 
-
-
         bateauSelected = new boolean[]{false, false, false, false, false};
 
         JPanel principal = new JPanel();
-
         principal.setLayout(new BorderLayout());
 
-
-
         JPanel jeuGauche = new JPanel();
-
         jeuGauche.setLayout(new BorderLayout());
 
         JPanel jeu1 = new JPanel();
         jeu1.setLayout(new GridLayout(11,11));
 
 
-
+        // Création des labels afin de numérotés la grille de jeu
         JLabel labelA = new JLabel("A");
         JLabel labelB = new JLabel("B");
         JLabel labelC = new JLabel("C");
@@ -66,7 +59,6 @@ public class PositionnementBateau extends JFrame {
         JLabel labelI = new JLabel("I");
         JLabel labelJ = new JLabel("J");
         JLabel labelvide = new JLabel("");
-
 
         jeu1.add(labelA);
         jeu1.add(labelB);
@@ -82,6 +74,7 @@ public class PositionnementBateau extends JFrame {
 
         int id = 1;
 
+        // Création de,la grille de cases pour positionner les bateaux
         for (int x=0; x<10; x++){
             String text = new String();
             text = String.valueOf(x+1);
@@ -100,8 +93,7 @@ public class PositionnementBateau extends JFrame {
 
         JPanel panelJouer = new JPanel(new FlowLayout());
 
-
-
+        // Panel pour les boutons situés en haut à droite
         JPanel panel1 = new JPanel(new BorderLayout());
         JPanel panel2 = new JPanel(new FlowLayout());
         bouton1 = new JButton("Settings");
@@ -110,10 +102,7 @@ public class PositionnementBateau extends JFrame {
         panel2.add(bouton2);
         panel1.add(panel2,BorderLayout.EAST);
 
-
-
-
-
+        // Création d'un JLabel
         JPanel placement = new JPanel();
         JLabel placerBateau = new JLabel("Placez vos Bateaux !");
         placement.add(placerBateau);
@@ -122,6 +111,7 @@ public class PositionnementBateau extends JFrame {
         haut.add(panel1, BorderLayout.NORTH);
         haut.add(placement);
 
+        // Création des boutons  situés à droite du panel contenant les images des bateaux à placer sur la grille
         Icon IconBateau1 = new ImageIcon("./img/bateau_1case.png");
         bateau1 = new JButton(IconBateau1);
         Icon IconBateau2 = new ImageIcon("./img/bateau_2cases.png");
@@ -133,16 +123,14 @@ public class PositionnementBateau extends JFrame {
         Icon IconBateau5 = new ImageIcon("./img/bateau_5cases.png");
         bateau5 = new JButton(IconBateau5);
 
-
-
-
+        // Création de la case pour rentrer son pseudo située en haut à droite
         pseudo = new JTextField("");
         pseudo.setToolTipText("Entrez votre pseudo : ");
         pseudo.setBorder(BorderFactory.createTitledBorder("Entrez votre pseudo :"));
         vertical = new JCheckBox("Vertical");
 
+        // Ajout des différents composa,ts crées précedemment au panel
         JPanel selectBateau = new JPanel(new GridLayout(8,1));
-
         selectBateau.add(pseudo);
         selectBateau.add(vertical);
         selectBateau.add(bateau1);
@@ -151,7 +139,7 @@ public class PositionnementBateau extends JFrame {
         selectBateau.add(bateau4);
         selectBateau.add(bateau5);
 
-
+        // Création de deux boutons situés en bas du panel
         JPanel bas = new JPanel(new BorderLayout());
         jouer = new JButton("Continuer");
         JPanel bas1 = new JPanel(new FlowLayout());
@@ -160,24 +148,22 @@ public class PositionnementBateau extends JFrame {
         clear = new JButton("clear");
         bas.add(clear, BorderLayout.EAST);
 
-
         jeuGauche.add(panelJouer, BorderLayout.SOUTH);
-
         jeuGauche.add(jeu1, BorderLayout.CENTER);
-
 
         principal.add(bas, BorderLayout.SOUTH);
         principal.add(selectBateau, BorderLayout.EAST);
         principal.add(haut, BorderLayout.NORTH);
         principal.add(jeuGauche, BorderLayout.CENTER);
 
-        //this.setResizable(false);
+        this.setResizable(false);
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         this.setPreferredSize(new Dimension(1175,800));
         this.setContentPane(principal);
 
     }
 
+    // liens des listeners
     public void fixeListenerSettings(ActionListener action){
         bouton1.addActionListener(action);
     }
@@ -235,6 +221,8 @@ public class PositionnementBateau extends JFrame {
         tab[pos] = val;
         this.bateauSelected = tab;
     }
+
+    //listeners pour les boutons avec les images de bateau sélectionnées ou non
     public boolean[] getBateauSelected1(){
         return this.bateauSelected;
     }

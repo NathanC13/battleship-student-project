@@ -33,7 +33,6 @@ public class ImageShowingComponent extends JComponent {
             boolean horizontale = true;
             boolean vertical = true;
 
-
             int nombre_case = fenetre.getBateauSelected() + 1;
 
             for (int i=0; i<nombre_case; i++){
@@ -50,6 +49,7 @@ public class ImageShowingComponent extends JComponent {
 
             String a = null;
             String b = null;
+
             if (fenetre.getVertical().isSelected()) {
                 a = (Character.toString((char) id[1] + 65) + ((id[0] + 1)));
                 b = (Character.toString((char) id[1] + 65) + ((id[0] + 1) + nombre_case - 1));
@@ -108,27 +108,20 @@ public class ImageShowingComponent extends JComponent {
                         badCoordException.printStackTrace();
                     }
                 }
-          /*     for(int j = 0; j<=joueur.getFlotte().getShips().size();j++){
-                   if(joueur.getFlotte().getShips().get(j)==){
-                       nb_sub++;
-                   }
-               }*/
+
                 Set<IShip> categorie = joueur.getFlotte().getShips(boat.getCategory());
 
                 if(categorie.size() != test ) {
-
-
-
                     try {
                         Image image1 = ImageIO.read(new File("./img/cases_brouillon/case_bateau.png"));
                         for (int i = 0; i < nombre_case; i++) {
 
 
                             if (fenetre.getVertical().isSelected() && (id[0] + nombre_case <= 10) && vertical) {
-                                ImageShowingComponent case0 = list[id[0] + i][id[1]];
-                                case0.img = image1;
-                                case0.setType(1);
-                                joueur.addFlotte(boat);
+                                    ImageShowingComponent case0 = list[id[0] + i][id[1]];
+                                    case0.img = image1;
+                                    case0.setType(1);
+                                    joueur.addFlotte(boat);
                             } else if ((!fenetre.getVertical().isSelected()) && (id[1] + nombre_case <= 10) && horizontale) {
                                 ImageShowingComponent case0 = list[id[0]][id[1] + i];
                                 case0.img = image1;
@@ -140,8 +133,6 @@ public class ImageShowingComponent extends JComponent {
                         exception.printStackTrace();
                     }
                 }
-                
-
             }
 
             System.out.println(joueur.getFlotte());
@@ -170,8 +161,6 @@ public class ImageShowingComponent extends JComponent {
         g.drawImage(img, 0, 0, null);
     }
 
-    // This method override will tell the LayoutManager how large this component
-    // should be. We'll want to make this component the same size as the `img`.
     public Dimension getPreferredSize() {
         return new Dimension(img.getWidth(null), img.getHeight(null));
     }

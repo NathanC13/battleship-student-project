@@ -44,19 +44,13 @@ public class CreerOuRejoindre extends JFrame {
         JPanel panel5 = new JPanel();
         JPanel panel6 = new JPanel();
         JLabel label1 = new JLabel("Bienvenue dans la bataille navale - BeeYard Edition");
-        // this.bouton3 = new JButton("Français");
-        //this.bouton4 = new JButton("Belge");
 
-
-
-
-
+        // Ajout de l'image du jeu au centre du panel
         JPanel panel4 = new JPanel();
         panel4.setLayout(new FlowLayout(FlowLayout.CENTER));
         ImageMenu img = new ImageMenu();
         panel4.add(img);
         panel1.add(panel4,BorderLayout.CENTER);
-
 
         //ajout des panels aux panel principal
         menuprincipal.add(panel1,BorderLayout.SOUTH);
@@ -66,6 +60,8 @@ public class CreerOuRejoindre extends JFrame {
         this.setPreferredSize(new Dimension(700,500));
         this.setContentPane(menuprincipal);
     }
+
+    // liens avec les listeners
     public void fixeListenerCreerServeur(ActionListener action){
         bouton2.addActionListener(action);
     }

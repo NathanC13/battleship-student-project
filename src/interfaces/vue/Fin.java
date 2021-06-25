@@ -12,7 +12,6 @@ public class Fin extends JFrame {
     public Fin(String titre, int serv_response){
         super(titre);
 
-
         JPanel principal = new JPanel(new BorderLayout());
 
         ImageFin img = new ImageFin(serv_response);
@@ -20,8 +19,6 @@ public class Fin extends JFrame {
 
         rejouer = new JButton("Quitter");
         principal.add(rejouer, BorderLayout.SOUTH);
-
-
 
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         this.setPreferredSize(new Dimension(720,420));
@@ -36,6 +33,5 @@ public class Fin extends JFrame {
     public void fixListenerRejouer(ActionListener action){
         rejouer.addActionListener(action);
     }
-
 
 }

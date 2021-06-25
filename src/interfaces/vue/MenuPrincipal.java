@@ -47,20 +47,15 @@ public class MenuPrincipal extends JFrame {
         JPanel panel5 = new JPanel();
         JPanel panel6 = new JPanel();
         JLabel label1 = new JLabel("Bienvenue dans la bataille navale - BeeYard Edition");
-       // this.bouton3 = new JButton("Français");
-        //this.bouton4 = new JButton("Belge");
 
-
-
+        // boutons pour la sélection du style de jeu
         fr = new JRadioButton("Français", true);
         be = new JRadioButton("Belge");
         ButtonGroup group = new ButtonGroup();
         group.add(fr);
         group.add(be);
 
-
-
-
+        // Ajout des composants aux différents panels
         panel5.add(label1);
         panel3.add(panel5,BorderLayout.WEST);
         panel6.add(fr);
@@ -72,23 +67,23 @@ public class MenuPrincipal extends JFrame {
         panel3.add(panel6,BorderLayout.EAST);
         panel2.add(panel3,BorderLayout.SOUTH);
 
+        // Ajout de l'image créee du jeu au centre, en haut du menu principal
         JPanel panel4 = new JPanel();
         panel4.setLayout(new FlowLayout(FlowLayout.CENTER));
         ImageMenu img = new ImageMenu();
         panel4.add(img);
         panel1.add(panel4,BorderLayout.CENTER);
 
-
-        //ajout des panels aux panel principal
+        // Ajout des panels aux panel principal
         menuprincipal.add(panel1,BorderLayout.SOUTH);
         menuprincipal.add(panel2);
-
 
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         this.setPreferredSize(new Dimension(700,500));
         this.setContentPane(menuprincipal);
     }
 
+    // liens avec les différents listeners
     public void fixeListenerQuitter(ActionListener action){
         bouton2.addActionListener(action);
     }

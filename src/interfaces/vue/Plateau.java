@@ -68,9 +68,11 @@ public class Plateau extends JFrame{
                 east.add(img);
             }
         }
+
         JPanel center =  new JPanel();
         center.setLayout(new GridLayout(10,10));
 
+        // Ajout des images de la flotte créer lors du positionnement des bateaux au jeu
         for (int x=0; x<10; x++){
             for (int y=0; y<10; y++){
 
@@ -86,7 +88,6 @@ public class Plateau extends JFrame{
         centre.add(score);
         plateau.add(centre,BorderLayout.CENTER);
 
-
         center.setBorder(BorderFactory.createTitledBorder("Vos bateaux : "));
         east.setBorder(BorderFactory.createTitledBorder("Ciblage : "));
 
@@ -95,21 +96,12 @@ public class Plateau extends JFrame{
         plateau.add(east,BorderLayout.EAST);
         plateau.add(center,BorderLayout.WEST);
 
-
-
-
-
-
-
-
-
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         this.setPreferredSize(new Dimension(1200,700));
         this.setContentPane(plateau);
-
-
     }
 
+    // liens avec les listeners
     public void fixeListenerSettings(ActionListener action){
         setting.addActionListener(action);
     }

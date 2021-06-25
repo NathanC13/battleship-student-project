@@ -30,9 +30,9 @@ public class ServeurChoix extends JFrame {
         JPanel panelgauche = new JPanel();
         panelgauche.setLayout(new GridLayout(0,1,5,10));
 
-        //récupération des id des parties joignables
-        //Network.setProxy("srv-proxy-etu-2.iut-nantes.univ-nantes.prive", 3128);
-        //Network.enableProxy(true);
+        //connexion au serveur de l'IUT + récupération des id des parties joignables
+        Network.setProxy("srv-proxy-etu-2.iut-nantes.univ-nantes.prive", 3128);
+        Network.enableProxy(true);
         try {
             List<Game> game = Network.listInitializedGames("http://37.187.38.219/api/v0");
             id = new int[game.size()];
@@ -56,11 +56,10 @@ public class ServeurChoix extends JFrame {
             e.printStackTrace();
         }
 
-
-
         panelprincipal.add(new JScrollPane(panelgauche),BorderLayout.WEST);
 
-         okButton = new JButton("Rejoindre");
+        // panel droit avec le bouton en gros à droite
+        okButton = new JButton("Rejoindre");
         okButton.setMargin(new Insets(20, 50, 20, 50));
         okButton.setFont(okButton.getFont().deriveFont(50f));
         JPanel centerButtonPanel = new JPanel(new GridBagLayout());
@@ -72,6 +71,8 @@ public class ServeurChoix extends JFrame {
         this.setPreferredSize(new Dimension(900,700));
         this.setContentPane(panelprincipal);
     }
+
+    //liens avec les listeners
     public void fixeListenerChoixControleur(ActionListener action){
         okButton.addActionListener(action);
     }

@@ -38,5 +38,4 @@ public class ImageFin extends JComponent {
         g.drawImage(img, 0, 0, null);
     }
 
-
 }

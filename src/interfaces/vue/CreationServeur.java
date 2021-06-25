@@ -41,13 +41,12 @@ public class CreationServeur extends JFrame {
         JPanel panel6 = new JPanel();
         JLabel label1 = new JLabel("Bienvenue dans la bataille navale - BeeYard Edition");
 
-
+        // Ajout d'une image au centre
         JPanel panel4 = new JPanel();
         panel4.setLayout(new FlowLayout(FlowLayout.CENTER));
         ImageMenu img = new ImageMenu();
         panel4.add(img);
         panel1.add(panel4,BorderLayout.NORTH);
-
 
         //ajout des panels aux panel principal
         menuprincipal.add(panel1,BorderLayout.NORTH);
@@ -58,6 +57,7 @@ public class CreationServeur extends JFrame {
         this.setContentPane(menuprincipal);
     }
 
+    // liens avec les listeners
     public void fixeListenerCreationServeur(ActionListener action){
         bouton1.addActionListener(action);
     }

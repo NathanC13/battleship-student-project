@@ -15,7 +15,6 @@ public class ImageMenu2 extends JComponent {
 
     ImageMenu2() {
 
-
         try {
             img = ImageIO.read(new File("./img/logo_beeyard_reduit.png"));
 
@@ -28,8 +27,6 @@ public class ImageMenu2 extends JComponent {
         g.drawImage(img, 0, 0, null);
     }
 
-    // This method override will tell the LayoutManager how large this component
-    // should be. We'll want to make this component the same size as the `img`.
     public Dimension getPreferredSize() {
         return new Dimension(img.getWidth(null), img.getHeight(null));
     }
