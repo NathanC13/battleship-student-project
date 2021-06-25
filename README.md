@@ -68,6 +68,22 @@ Le joueur n'a plus qu'à cliquer sur 'Créer la partie' pour commencer.
 
 ## Gameplay
 
+La partie peut commencer ! Le plateau de jeu apparaît alors :
+
+![](img/Gameplay1.png)
+
+On y aperçoit à gauche le plateau de vos bateaux et à droite le plateau des bateaux de votre adversaire. Chacun votre tour, le joueur clique sur case et dévoile la nature de celle-ci :
+
+![](img/Gameplay2.png)
+
+Il y a différents type de cases : 
+- celle avec un rond jaune qui correspond à une case sans bateau;
+- celle dotée d'une flamme : le joueur a touché un bateau;
+- celle dotée d'une flamme sur fond rouge : le joueur a coulé un bateau;
+
+En bas de l'écran, on retrouve des compteurs avec le nombre de bateaux restants, de touchés, et de ratés.
+
+Le joueur gagne quand il a coulé tous les bateaux de son adversaire.
 
 ## Victory/Defeat
 
@@ -75,13 +91,17 @@ Si le joueur remporte la partie de BattleShip, il est conduit sur un écran vict
 
 ![](img/Victory_fin.png)
 
-Il peut cliquer sur le bouton 'Rejouer' pour recommencer une partie.
+Il peut cliquer sur le bouton 'Quitter' pour Quitter une partie.
 
 Si au contraire le joueur perd c'est l'écrans suivant qui apparaît : 
 
 ![](img/Defeat_fin.png)
 
+## Fin
 
+Voilà, vous connaissez maintenant tous de BATTLESHIP BeeYard Edition. 
+Il ne vous manque plus qu'à vous amuser sur le jeu.
+Enfin, n'oubliez pas de soutenir le Trailer du jeu, cela nous ferait extrêmement plaisir !
 
 
    
