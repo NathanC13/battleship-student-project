@@ -101,6 +101,7 @@ Si au contraire le joueur perd c'est l'écrans suivant qui apparaît :
 
 Voilà, vous connaissez maintenant tous de BATTLESHIP BeeYard Edition. 
 Il ne vous manque plus qu'à vous amuser sur le jeu.
+
 Enfin, n'oubliez pas de soutenir le Trailer du jeu, cela nous ferait extrêmement plaisir !
 
 
