@@ -1,7 +1,7 @@
 # Projet S2 groupe 18 : BattleShip BeeYard Edition
 [ATTENTION : Le proxy se trouve dans le fichier ServeurChoix dans le package vue !]
 
-![Logo du jeu](img/BattleShip.png)Voici le logo de notre jeu créé par nos propre soins.
+![Logo du jeu](img/BattleShip.png)Voici le logo de notre jeu créé par nos propres soins.
 
 BeeYard fait référence aux nombreux projets de notre groupe, que l'on considère comme notre signature.
 
@@ -11,20 +11,20 @@ Nous avions à coeurs de créer notre propre identité visuelle à travers diff�
 ## Menu
 ![](img/Menu.png)
 
-Notre menu a été crée de manière à capter l'attention du joueur avec le logo en figure de proue. Il propose plusieurs fonctonnalités comme le bouton 'informations' qui donne toutes les infos nécessaires pour comprendre les règles du jeu ainsi que ses différents modes.
+Notre menu a été créé de manière à capter l'attention du joueur avec le logo en figure de proue. Il propose plusieurs fonctionnalités comme le bouton 'Informations' qui donne toutes les infos nécessaires pour comprendre les règles du jeu ainsi que ses différents modes.
 
 Les deux boutons centraux sont les plus importants, permettant de commencer le jeu ou tout simplement de quitter le jeu.
 On retrouve aussi le logo BeeYard (notre signature). 
 
-En bas, se trouve une petite phrase de présentation ainsi que le choix entre la version française du jeu et sa version belge. Il suffit de sélectionner la version souhaité.
+En bas, se trouve une petite phrase de présentation ainsi que le choix entre la version française du jeu et sa version belge. Il suffit de sélectionner la version souhaitée.
 
 ## Placement des bateaux
 
-Après avoir cliquer sur 'Nouvelle partie' dans le menu, on se retrouve sur la page de placement des bateaux.
+Après avoir cliqué sur 'Nouvelle partie' dans le menu, on se retrouve sur la page de placement des bateaux.
 
 ![](img/Placer_bateaux.png)
 
-Le plateau apparaît donc avec les différents bateaux de la version sélectionné (ici la version française). Il suffit de choisir le bateau voulu et de cliquer sur le plateau pour le placer à l'endroit souhaité. La case du bateau se grise une fois placé. Une checkbox permettant de choisir la position verticale se touve au-dessus des bateaux pour permettre de les mettres en position verticale. Les cases où sont placés les bateaux se grisent aussi.
+Le plateau apparaît donc avec les différents bateaux de la version sélectionnée (ici la version française). Il suffit de choisir le bateau voulu et de cliquer sur le plateau pour le placer à l'endroit souhaité. La case du bateau se grise une fois placé. Une checkbox permettant de choisir la position verticale se trouve au-dessus des bateaux pour permettre de les mettre en position verticale. Les cases où sont placés les bateaux se grisent aussi.
 
 On peut voir un champ permettant de rentrer son pseudo en haut à droite. Il y a aussi un bouton 'clear' permettant de nettoyer le plateau si on veut changer de configuration navale.
 
@@ -50,17 +50,17 @@ Ce bouton indique des informations pertinentes pour le joueur.
 
 ## Rejoindre une partie
 
-Une fois vos bateaux placés, le joueur accéde à un nouveau menu.
+Une fois vos bateaux placés, le joueur accède à un nouveau menu.
 
 ![](img/Menu_Rejoindre.png)
 
-Ce menu offre le choix de rejoindre une partie déja créée ou de créer une partie.
+Ce menu offre le choix de rejoindre une partie déjà créée ou de créer une partie.
 
 Si le joueur clique sur 'Rejoindre une partie", il accède à cette fenêtre : 
 
 ![](img/Rejoindre.png)
 
-Il retrouve à gauche la liste des serveurs déja existants. Il lui suffit de sélectionner un serveur et de cliquer sur 'Rejoindre' pour accéder à la partie.
+Il retrouve à gauche la liste des serveurs déjà existants. Il lui suffit de sélectionner un serveur et de cliquer sur 'Rejoindre' pour accéder à la partie.
 
 Au contraire, si le joueur souhaite créer une partie, il accède à cette fenêtre :
 
@@ -74,16 +74,16 @@ La partie peut commencer ! Le plateau de jeu apparaît alors :
 
 ![](img/Gameplay1.png)
 
-On y aperçoit à gauche le plateau de vos bateaux et à droite le plateau des bateaux de votre adversaire. Chacun leur tour, le joueur clique sur case et dévoile la nature de celle-ci :
+On y aperçoit à gauche le plateau de vos bateaux et à droite le plateau des bateaux de votre adversaire. Chacun leur tour, le joueur clique sur une case et dévoile la nature de celle-ci :
 
 ![](img/Gameplay2.png)
 
-Il y a différents type de cases : 
+Il y a différents types de cases : 
 - celle avec un rond jaune correspondant à une case sans bateau;
 - celle dotée d'une flamme : le joueur a touché un bateau;
 - celle dotée d'une flamme sur fond rouge : le joueur a coulé un bateau;
 
-En bas de l'écran, on retrouve des compteurs avec le nombre de bateaux de touchés et le nombre de ratés.
+En bas de l'écran, on retrouve des compteurs avec le nombre de bateaux touchés et le nombre de ratés.
 
 Le joueur gagne quand il a coulé tous les bateaux de son adversaire.
 
