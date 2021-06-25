@@ -6,6 +6,7 @@ import info1.network.Game;
 import info1.network.Network;
 import info1.ships.BadCoordException;
 import info1.ships.Coord;
+import info1.ships.IShip;
 import info1.ships.UncompleteFleetException;
 import interfaces.Joueur;
 import interfaces.controleurs.ServeurChoix.ChoixControleur;
@@ -53,7 +54,7 @@ public class JeuImageComponent extends JComponent {
 
             System.out.println("GAME: " + game);
 
-
+            List<IShip> listShips = null;
 
             try {
                 int serv_response = Network.getInfo("http://37.187.38.219/api/v0", game, playGameControleur.getP());
@@ -65,6 +66,11 @@ public class JeuImageComponent extends JComponent {
                         System.out.println("touche");
                         cptbattouche++;
                     } else if (tour_response == 10) {
+
+
+
+
+
                         img = ImageIO.read(new File("./img/case_bateau_coule.png"));
                         System.out.println("Coulé");
                         cptbattouche++;
