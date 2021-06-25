@@ -45,6 +45,10 @@ public class PlayGameControleur implements ActionListener {
             this.positionnementBateau.dispose();
         }else {
             System.out.println("FLOTTE INCOMPLETE");
+            JFrame frame = new JFrame("Notice de jeu");
+            String message = "Votre flotte doit être complète en utilisant tous\nles bateaux disponibles.";
+            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            JOptionPane.showMessageDialog(frame, message, "Notice de jeu", JOptionPane.ERROR_MESSAGE);
         }
     }
 

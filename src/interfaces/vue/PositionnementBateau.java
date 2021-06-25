@@ -25,7 +25,7 @@ public class PositionnementBateau extends JFrame {
 
     private Joueur joueur;
 
-    public PositionnementBateau(String titre, Joueur joueur){
+    public PositionnementBateau(String titre, Joueur joueur, MenuPrincipal menuPrincipal){
         super (titre);
 
         listCase = new ImageShowingComponent[10][];
@@ -88,7 +88,7 @@ public class PositionnementBateau extends JFrame {
             jeu1.add(new JLabel(text));
             for (int y=0; y<10; y++){
 
-                ImageShowingComponent img = new ImageShowingComponent(new int[]{x,y}, this, joueur);
+                ImageShowingComponent img = new ImageShowingComponent(new int[]{x,y}, this, joueur, menuPrincipal);
                 img.setType(0);
                 listCase[x][y] = img;
 
