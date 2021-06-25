@@ -38,7 +38,9 @@ Settings lance une nouvelle fenêtre permettant plusieurs choix.
 
 ![](img/Settings.png)
 
-On peut donc quitter le jeu à l'aide du bouton 'Quit the Game' ou cliquer sur 'Back to the Game' pour revenir au jeu.
+On peut donc quitter le jeu à l'aide du bouton 'Quit the Game' ou 
+cliquer sur 'Back to the Game' pour revenir au jeu.
+Le joueur peut recommencer une partie en cliquant sur 'Restart a game'.s
 
 Ensuite il y a le bouton 'Help'.
 
