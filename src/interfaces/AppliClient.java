@@ -44,15 +44,15 @@ public class AppliClient {
         positionnementBateau.fixeListenerHelp(helpControleur);
         ClearControleur clearControleur = new ClearControleur(positionnementBateau,fenetre);
         positionnementBateau.fixeListenerClear(clearControleur);
-        Bateau1Controleur bateau1Controleur = new Bateau1Controleur(positionnementBateau);
+        Bateau1Controleur bateau1Controleur = new Bateau1Controleur(positionnementBateau, joueur);
         positionnementBateau.fixeListenerBateau1(bateau1Controleur);
-        Bateau2Controleur bateau2Controleur = new Bateau2Controleur(positionnementBateau);
+        Bateau2Controleur bateau2Controleur = new Bateau2Controleur(positionnementBateau, joueur);
         positionnementBateau.fixeListenerBateau2(bateau2Controleur);
-        Bateau3Controleur bateau3Controleur = new Bateau3Controleur(positionnementBateau);
+        Bateau3Controleur bateau3Controleur = new Bateau3Controleur(positionnementBateau, joueur);
         positionnementBateau.fixeListenerBateau3(bateau3Controleur);
-        Bateau4Controleur bateau4Controleur = new Bateau4Controleur(positionnementBateau);
+        Bateau4Controleur bateau4Controleur = new Bateau4Controleur(positionnementBateau, joueur);
         positionnementBateau.fixeListenerBateau4(bateau4Controleur);
-        Bateau5Controleur bateau5Controleur = new Bateau5Controleur(positionnementBateau);
+        Bateau5Controleur bateau5Controleur = new Bateau5Controleur(positionnementBateau,joueur);
         positionnementBateau.fixeListenerBateau5(bateau5Controleur);
 
 

@@ -235,6 +235,9 @@ public class PositionnementBateau extends JFrame {
         tab[pos] = val;
         this.bateauSelected = tab;
     }
+    public boolean[] getBateauSelected1(){
+        return this.bateauSelected;
+    }
 
     public JButton getBateau1() {
         return bateau1;

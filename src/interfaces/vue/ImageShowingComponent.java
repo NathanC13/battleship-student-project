@@ -11,6 +11,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.io.File;
 import java.io.IOException;
+import java.util.Set;
 
 public class ImageShowingComponent extends JComponent {
 
@@ -20,6 +21,7 @@ public class ImageShowingComponent extends JComponent {
     private int type;
     private Joueur joueur;
     private Ship boat;
+    private int nb_sub;
 
     private MouseListener listener = new MouseAdapter() {
         public void mouseClicked(MouseEvent e) {
@@ -63,38 +65,53 @@ public class ImageShowingComponent extends JComponent {
                 System.out.println(a);
                 System.out.println(b);
 
+                int test = -1;
+
                 if (fenetre.getBateauSelected() == 0){
                     try {
                         boat = new Submarine("submarine" + a +""+b, a);
+                        test =4;
                     } catch (BadCoordException | CoordsBadShipException badCoordException) {
                         badCoordException.printStackTrace();
                     }
                 } else if (fenetre.getBateauSelected() == 1){
                     try {
                         boat = new Destroyer("destroyer" + a +""+b, a, b);
-                        System.out.println(boat.getCoords());
+                        test = 3;
                     } catch (BadCoordException | CoordsBadShipException badCoordException) {
                         badCoordException.printStackTrace();
                     }
                 } else if (fenetre.getBateauSelected() == 2) {
                     try {
                         boat = new Cruiser("cruiser" + a +"" +b, a,b);
+                        test = 2;
                     } catch (BadCoordException | CoordsBadShipException badCoordException) {
                         badCoordException.printStackTrace();
                     }
                 } else if (fenetre.getBateauSelected() == 3) {
                     try {
                         boat = new Battleship("battleship" + a+ "" +b, a,b);
+                        test = 1;
                     } catch (BadCoordException | CoordsBadShipException badCoordException) {
                         badCoordException.printStackTrace();
                     }
                 } else if (fenetre.getBateauSelected() == 4) {
                     try {
                         boat = new AircraftCarrier("aircraftcarrier" + a +"" +b, a,b);
+                        test = 1;
                     } catch (BadCoordException | CoordsBadShipException badCoordException) {
                         badCoordException.printStackTrace();
                     }
                 }
+          /*     for(int j = 0; j<=joueur.getFlotte().getShips().size();j++){
+                   if(joueur.getFlotte().getShips().get(j)==){
+                       nb_sub++;
+                   }
+               }*/
+                Set<IShip> categorie = joueur.getFlotte().getShips(boat.getCategory());
+
+                if(categorie.size() != test ) {
+
 
 
                     try {
@@ -102,12 +119,12 @@ public class ImageShowingComponent extends JComponent {
                         for (int i = 0; i < nombre_case; i++) {
 
 
-                            if (fenetre.getVertical().isSelected() && (id[0] + nombre_case<=10) && vertical) {
+                            if (fenetre.getVertical().isSelected() && (id[0] + nombre_case <= 10) && vertical) {
                                 ImageShowingComponent case0 = list[id[0] + i][id[1]];
                                 case0.img = image1;
                                 case0.setType(1);
                                 joueur.addFlotte(boat);
-                            }else if ((!fenetre.getVertical().isSelected()) && (id[1] + nombre_case<=10) && horizontale){
+                            } else if ((!fenetre.getVertical().isSelected()) && (id[1] + nombre_case <= 10) && horizontale) {
                                 ImageShowingComponent case0 = list[id[0]][id[1] + i];
                                 case0.img = image1;
                                 case0.setType(1);
@@ -117,6 +134,8 @@ public class ImageShowingComponent extends JComponent {
                     } catch (IOException exception) {
                         exception.printStackTrace();
                     }
+                }
+                
 
             }
 
