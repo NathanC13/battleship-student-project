@@ -61,9 +61,23 @@ Au contraire, si le joueur souhaite créer une partie, il accède à cette fenê
 
 ![](img/Créer.png)
 
-Le joueur rentre un nom pour son serveur et il peut ensuite accéder à la partie.
+Le joueur n'a plus qu'à cliquer sur 'Créer la partie' pour commencer.
 
 ## Gameplay
+
+
+## Victory/Defeat
+
+Si le joueur remporte la partie de BattleShip, il est conduit sur un écran victorieux
+
+![](img/Victory_fin.png)
+
+Il peut cliquer sur le bouton 'Rejouer' pour recommencer une partie.
+
+Si au contraire le joueur perd c'est l'écrans suivant qui apparaît : 
+
+![](img/Defeat_fin.png)
+
 
 
 
