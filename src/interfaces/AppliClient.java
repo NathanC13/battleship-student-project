@@ -17,7 +17,7 @@ public class AppliClient {
         Joueur joueur = new Joueur();
 
         MenuPrincipal fenetre = new MenuPrincipal("BattleShip Beeyard Edition© - Menu Principal ");
-        PositionnementBateau positionnementBateau = new PositionnementBateau("BattleShip Beeyard Edition© - Choix des placements de bateaux ", joueur);
+        PositionnementBateau positionnementBateau = new PositionnementBateau("BattleShip Beeyard Edition© - Choix des placements de bateaux ", joueur,fenetre);
         Settings settings = new Settings("Settings ");
 
         CreerOuRejoindre CreerOuRejoindre = new CreerOuRejoindre("BattleShip Beeyard Edition© - Choix du mode ");
@@ -48,13 +48,13 @@ public class AppliClient {
         positionnementBateau.fixeListenerClear(clearControleur);
         Bateau1Controleur bateau1Controleur = new Bateau1Controleur(positionnementBateau, joueur);
         positionnementBateau.fixeListenerBateau1(bateau1Controleur);
-        Bateau2Controleur bateau2Controleur = new Bateau2Controleur(positionnementBateau, joueur);
+        Bateau2Controleur bateau2Controleur = new Bateau2Controleur(positionnementBateau, joueur, fenetre);
         positionnementBateau.fixeListenerBateau2(bateau2Controleur);
-        Bateau3Controleur bateau3Controleur = new Bateau3Controleur(positionnementBateau, joueur);
+        Bateau3Controleur bateau3Controleur = new Bateau3Controleur(positionnementBateau, joueur,fenetre);
         positionnementBateau.fixeListenerBateau3(bateau3Controleur);
-        Bateau4Controleur bateau4Controleur = new Bateau4Controleur(positionnementBateau, joueur);
+        Bateau4Controleur bateau4Controleur = new Bateau4Controleur(positionnementBateau, joueur,fenetre);
         positionnementBateau.fixeListenerBateau4(bateau4Controleur);
-        Bateau5Controleur bateau5Controleur = new Bateau5Controleur(positionnementBateau,joueur);
+        Bateau5Controleur bateau5Controleur = new Bateau5Controleur(positionnementBateau,joueur,fenetre);
         positionnementBateau.fixeListenerBateau5(bateau5Controleur);
 
 

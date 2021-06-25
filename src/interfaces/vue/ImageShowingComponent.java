@@ -22,6 +22,7 @@ public class ImageShowingComponent extends JComponent {
     private Joueur joueur;
     private Ship boat;
     private int nb_sub;
+    private MenuPrincipal menu;
 
     private MouseListener listener = new MouseAdapter() {
         public void mouseClicked(MouseEvent e) {
@@ -31,7 +32,7 @@ public class ImageShowingComponent extends JComponent {
 
             boolean horizontale = true;
             boolean vertical = true;
-            
+
 
             int nombre_case = fenetre.getBateauSelected() + 1;
 
@@ -77,7 +78,11 @@ public class ImageShowingComponent extends JComponent {
                 } else if (fenetre.getBateauSelected() == 1){
                     try {
                         boat = new Destroyer("destroyer" + a +""+b, a, b);
-                        test = 3;
+                        if(menu.getFr().isSelected()) {
+                            test = 1;
+                        }else {
+                            test = 3;
+                        }
                     } catch (BadCoordException | CoordsBadShipException badCoordException) {
                         badCoordException.printStackTrace();
                     }
@@ -146,11 +151,12 @@ public class ImageShowingComponent extends JComponent {
         }
     };
 
-    ImageShowingComponent(int[] id, PositionnementBateau fenetre, Joueur joueur) {
+    ImageShowingComponent(int[] id, PositionnementBateau fenetre, Joueur joueur,MenuPrincipal menu) {
         addMouseListener(listener);
         this.id = id;
         this.fenetre = fenetre;
         this.joueur = joueur;
+        this.menu = menu;
 
         try {
             img = ImageIO.read(new File("./img/case_normale.png"));
