@@ -54,20 +54,30 @@ public class JeuImageComponent extends JComponent {
             try {
                 int serv_response = Network.getInfo("http://37.187.38.219/api/v0", game, playGameControleur.getP());
 
-                if (serv_response == 10){
+                if (serv_response == 10) {
                     int tour_response = Network.playOneTurn("http://37.187.38.219/api/v0", game, playGameControleur.getP(), new Coord(Character.toString((char) id[1] + 65) + ((id[0] + 1))));
-                    if (tour_response==1){
+                    if (tour_response == 1) {
                         img = ImageIO.read(new File("./img/case_bateau_touche.png"));
                         System.out.println("touche");
-                    } else  if (tour_response==10){
+                    } else if (tour_response == 10) {
                         img = ImageIO.read(new File("./img/case_bateau_coule.png"));
                         System.out.println("Coulé");
-                    } else if (tour_response==0){
+                    } else if (tour_response == 0) {
                         System.out.println("Raté");
                         img = ImageIO.read(new File("./img/case_rate.png"));
-                    } else{
+                    } else {
                         System.out.println("reponse serveur : " + tour_response);
                     }
+                } else if (serv_response == 100) {
+                    System.out.println("WIN");
+                    Fin fin = new Fin("WIN", serv_response);
+                    fin.setVisible(true);
+                    fenetre.dispose();
+                } else if (serv_response == -100){
+                    System.out.println("PERDU");
+                    Fin fin = new Fin("PERDU", serv_response);
+                    fin.setVisible(true);
+                    fenetre.dispose();
                 } else if (serv_response == -10){
                     System.out.println("Ce n'est pas votre tour");
                 }
@@ -92,7 +102,6 @@ public class JeuImageComponent extends JComponent {
         this.playGameControleur = playGameControleur;
         this.serveurChoix = serveurChoix;
         this.positionnementBateau = positionnementBateau;
-
 
 
 

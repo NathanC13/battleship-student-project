@@ -19,24 +19,17 @@ import java.io.IOException;
 public class ImageFin extends JComponent {
 
     private Image img;
-    private Game game;
-    private String baseurl;
-    private Player player;
 
-    ImageFin() {
+    ImageFin(int serv_response) {
 
         try {
-            if (Network.getInfo(baseurl,game,player)==100){
+            if (serv_response==100){
                 img = ImageIO.read(new File("./img/VICTORY.jpg"));
             }
-            else if(Network.getInfo(baseurl,game,player)==-100){
+            else if(serv_response==-100){
                 img = ImageIO.read(new File("./img/DEFEAT.jpg"));
             }
         } catch (IOException e) {
-            e.printStackTrace();
-        } catch (UnirestException e) {
-            e.printStackTrace();
-        } catch (BadIdException e) {
             e.printStackTrace();
         }
     }

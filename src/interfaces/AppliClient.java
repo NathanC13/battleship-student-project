@@ -23,6 +23,7 @@ public class AppliClient {
         ServeurChoix serveurChoix = new ServeurChoix("BattleShip Beeyard Edition© - Choix du serveur");
 
         CreationServeur creationServeur = new CreationServeur("BattleShip Beeyard Edition© - Choix du serveur");
+
         QuitterControleur quitterControleur = new QuitterControleur(fenetre);
         fenetre.fixeListenerQuitter(quitterControleur);
         NewGameControleur newGameControleur = new NewGameControleur(fenetre, positionnementBateau);
