@@ -28,21 +28,24 @@ public class PlayGameControleur implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
 
+        if (positionnementBateau.getJoueur().getFlotte().isComplete()) {
+            //création du joueur
+            this.p = new Player(positionnementBateau.getPseudo());
+            System.out.println("INSCRIPTION: " + p.toString());
+            //inscription du joueur
+            try {
+                Network.suscribeNewPlayer("http://37.187.38.219/api/v0", p); //"http://37.187.38.219/api/v0"
+            } catch (UnirestException unirestException) {
+                unirestException.printStackTrace();
+            }
 
-        //création du joueur
-        this.p = new Player(positionnementBateau.getPseudo());
-        System.out.println("INSCRIPTION: " + p.toString());
-        //inscription du joueur
-       try {
-            Network.suscribeNewPlayer("http://37.187.38.219/api/v0",p); //"http://37.187.38.219/api/v0"
-       } catch (UnirestException unirestException) {
-            unirestException.printStackTrace();
-       }
+            positionnementBateau.getJoueur().setPseudo(positionnementBateau.getPseudo());
 
-        positionnementBateau.getJoueur().setPseudo(positionnementBateau.getPseudo());
-
-        this.CreerOuRejoindre.setVisible(true);
-        this.positionnementBateau.dispose();
+            this.CreerOuRejoindre.setVisible(true);
+            this.positionnementBateau.dispose();
+        }else {
+            System.out.println("FLOTTE INCOMPLETE");
+        }
     }
 
     public Player getP() {
