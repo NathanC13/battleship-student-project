@@ -103,7 +103,7 @@ public class CreationServeurControleur implements ActionListener {
     }
 
     public Joueur getJoueur() {
-        return joueur;
+        return positionnementBateau.getJoueur();
     }
 
     public Game getGame() {
