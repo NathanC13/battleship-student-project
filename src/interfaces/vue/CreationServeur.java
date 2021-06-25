@@ -26,11 +26,6 @@ public class CreationServeur extends JFrame {
         JPanel panel11 = new JPanel(new FlowLayout(FlowLayout.CENTER));
         JPanel panel12 = new JPanel(new FlowLayout(FlowLayout.RIGHT));
         panel1.add(panel12,BorderLayout.NORTH);
-        text2 = new JTextField();
-        panel11.add(text2);
-        text2.setPreferredSize(new Dimension(355,55));
-        text2.setBorder(BorderFactory.createTitledBorder("Veuillez entrer l'identifiant de la partie à créer"));
-        panel1.add(panel11,BorderLayout.SOUTH);
 
         //panel borderlayout de la partie sud (au nord)
         JPanel panel2 = new JPanel(new BorderLayout());
@@ -45,11 +40,6 @@ public class CreationServeur extends JFrame {
         JPanel panel5 = new JPanel();
         JPanel panel6 = new JPanel();
         JLabel label1 = new JLabel("Bienvenue dans la bataille navale - BeeYard Edition");
-        // this.bouton3 = new JButton("Français");
-        //this.bouton4 = new JButton("Belge");
-
-
-
 
 
         JPanel panel4 = new JPanel();
