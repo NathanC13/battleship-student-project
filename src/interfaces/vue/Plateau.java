@@ -84,7 +84,7 @@ public class Plateau extends JFrame{
         }
 
         JPanel centre = new JPanel();
-        JLabel score = new JLabel(" 0 : 0");
+        JLabel score = new JLabel("VS");
         centre.add(score);
         plateau.add(centre,BorderLayout.CENTER);
 
