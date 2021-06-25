@@ -1,9 +1,13 @@
 package interfaces.vue;
 
+import interfaces.fin.Rejouer;
+
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionListener;
 
 public class Fin extends JFrame {
+    private JButton rejouer;
 
     public Fin(String titre, int serv_response){
         super(titre);
@@ -14,7 +18,7 @@ public class Fin extends JFrame {
         ImageFin img = new ImageFin(serv_response);
         principal.add(img, BorderLayout.CENTER);
 
-        JButton rejouer = new JButton("Rejouer");
+        rejouer = new JButton("Quitter");
         principal.add(rejouer, BorderLayout.SOUTH);
 
 
@@ -23,6 +27,15 @@ public class Fin extends JFrame {
         this.setPreferredSize(new Dimension(720,420));
         this.setContentPane(principal);
         this.setResizable(false);
+
+        Rejouer lafin = new Rejouer();
+        fixListenerRejouer(lafin);
+
     }
+
+    public void fixListenerRejouer(ActionListener action){
+        rejouer.addActionListener(action);
+    }
+
 
 }
