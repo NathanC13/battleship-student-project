@@ -64,6 +64,7 @@ public class JeuImageComponent extends JComponent {
                         System.out.println("Coulé");
                     } else if (tour_response==0){
                         System.out.println("Raté");
+                        img = ImageIO.read(new File("./img/case_rate.png"));
                     } else{
                         System.out.println("reponse serveur : " + tour_response);
                     }
