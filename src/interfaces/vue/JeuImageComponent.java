@@ -33,6 +33,9 @@ public class JeuImageComponent extends JComponent {
     private PlayGameControleur playGameControleur;
     private ServeurChoix serveurChoix;
     private PositionnementBateau positionnementBateau;
+    private static int cptbatrest;
+    private static int cptbattouche = 0;
+    private static int cptrate = 0;
 
     private MouseListener listener = new MouseAdapter() {
         public void mouseClicked(MouseEvent e) {
@@ -51,6 +54,7 @@ public class JeuImageComponent extends JComponent {
             System.out.println("GAME: " + game);
 
 
+
             try {
                 int serv_response = Network.getInfo("http://37.187.38.219/api/v0", game, playGameControleur.getP());
 
@@ -59,12 +63,15 @@ public class JeuImageComponent extends JComponent {
                     if (tour_response == 1) {
                         img = ImageIO.read(new File("./img/case_bateau_touche.png"));
                         System.out.println("touche");
+                        cptbattouche++;
                     } else if (tour_response == 10) {
                         img = ImageIO.read(new File("./img/case_bateau_coule.png"));
                         System.out.println("Coulé");
+                        cptbattouche++;
                     } else if (tour_response == 0) {
                         System.out.println("Raté");
                         img = ImageIO.read(new File("./img/case_rate.png"));
+                        cptrate++;
                     } else {
                         System.out.println("reponse serveur : " + tour_response);
                     }
@@ -88,6 +95,12 @@ public class JeuImageComponent extends JComponent {
                 unirestException.printStackTrace();
             }
 
+            fenetre.getText1().setText("Touché(s) : "+ cptbattouche + "         ");
+            fenetre.getText3().setText("Fail(s) : "+cptrate + "     ");
+
+            fenetre.invalidate();
+            fenetre.validate();
+            fenetre.repaint();
             fenetre.invalidate(); //actualise la fenetre
             fenetre.validate();
             fenetre.repaint();
@@ -104,6 +117,7 @@ public class JeuImageComponent extends JComponent {
         this.playGameControleur = playGameControleur;
         this.serveurChoix = serveurChoix;
         this.positionnementBateau = positionnementBateau;
+        this.cptbatrest = joueur.getFlotte().getShips().size();
 
 
 

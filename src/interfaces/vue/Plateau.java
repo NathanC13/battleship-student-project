@@ -1,5 +1,10 @@
 package interfaces.vue;
 
+import com.mashape.unirest.http.exceptions.UnirestException;
+import info1.network.BadIdException;
+import info1.network.Game;
+import info1.network.Network;
+import interfaces.controleurs.plateaudejeu.*;
 
 import interfaces.Joueur;
 import interfaces.controleurs.positionnementBateau.PlayGameControleur;
@@ -12,9 +17,11 @@ import java.awt.event.ActionListener;
 public class Plateau extends JFrame{
 
 
-    private JButton help;
+    private JButton Help2;
     private JButton setting;
     private PlateauImageComponent[][] listCase;
+    private JLabel text1;
+    private JLabel text3;
 
     public Plateau(String titre, PositionnementBateau positionnementBateau, ServeurChoix serveurChoix, PlayGameControleur playGameControleur){
         super(titre);
@@ -32,22 +39,23 @@ public class Plateau extends JFrame{
         nord.setLayout(new FlowLayout(FlowLayout.RIGHT));
 
         setting = new JButton("Setting");
-        help = new JButton("Help");
+        Help2 = new JButton("Help");
 
         nord.add(setting);
-        nord.add(help);
+        nord.add(Help2);
 
-
+        //compteurs du jeu
+        int cptbatrest = 0;
+        int cptbattouche = 0;
+        int cptrate = 0;
 
         JPanel sud = new JPanel();
         sud.setLayout(new FlowLayout());
-        JLabel texte = new JLabel("Bateaux restants :                 ");
-        JLabel texte1 = new JLabel("Touché(s) :                       ");
-        JLabel texte3 = new JLabel("Fail(s) :                          ");
+        text1 = new JLabel("Touché(s) : "+ cptbattouche + "         ");
+        text3 = new JLabel("Raté(s) : "+cptrate + "     ");
 
-        sud.add(texte);
-        sud.add(texte1);
-        sud.add(texte3);
+        sud.add(text1);
+        sud.add(text3);
 
         JPanel east = new JPanel();
         east.setLayout(new GridLayout(10,10));
@@ -106,8 +114,8 @@ public class Plateau extends JFrame{
         setting.addActionListener(action);
     }
 
-    public void fixeListenerHelp(ActionListener action){
-        help.addActionListener(action);
+    public void fixeListenerHelp2(ActionListener action){
+        Help2.addActionListener(action);
     }
 
     public PlateauImageComponent[][] getCaselist() {
@@ -115,4 +123,11 @@ public class Plateau extends JFrame{
     }
 
 
+    public JLabel getText1() {
+        return text1;
+    }
+
+    public JLabel getText3() {
+        return text3;
+    }
 }
