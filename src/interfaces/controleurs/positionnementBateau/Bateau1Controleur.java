@@ -23,7 +23,7 @@ public class Bateau1Controleur implements ActionListener {
              System.out.println("debut" + fenetre.getBateauSelected1()[i]);
         }
             fenetre.getBateau1().setEnabled(false);
-
+//z
 
         if(!fenetre.getBateau1().isSelected()){
             if(joueur.getFlotte().getShips(ShipCategory.DESTROYER).size()== 3){
