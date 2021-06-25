@@ -22,7 +22,8 @@ public class Bateau4Controleur implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-       // if (fenetre.getBateau4().isSelected()) {
+        // Nous faisons en sorte de decliquer puis recliquer sur les boutons pour placer
+        // Nous differencions belge et francais en limitant le nombre de bateau apr categorie
 
     if(menu.getBe().isSelected()) {
         fenetre.getBateau4().setEnabled(false);
@@ -56,8 +57,8 @@ public class Bateau4Controleur implements ActionListener {
         fenetre.getBateau4().setEnabled(false);
 
         if (!fenetre.getBateau4().isSelected()) {
-            System.out.println("test");
-            if (joueur.getFlotte().getShips(ShipCategory.DESTROYER).size() == 3) {
+
+            if (joueur.getFlotte().getShips(ShipCategory.DESTROYER).size() == 1) {
                 fenetre.setBateauSelected(false, 1);
                 fenetre.getBateau2().setEnabled(false);
             } else {
@@ -68,6 +69,12 @@ public class Bateau4Controleur implements ActionListener {
                 fenetre.getBateau3().setEnabled(false);
             } else {
                 fenetre.getBateau3().setEnabled(true);
+            }
+            if (joueur.getFlotte().getShips(ShipCategory.AIRCRAFT_CARRIER).size() == 1) {
+                fenetre.setBateauSelected(false, 4);
+                fenetre.getBateau5().setEnabled(false);
+            } else {
+                fenetre.getBateau5().setEnabled(true);
             }
 
 

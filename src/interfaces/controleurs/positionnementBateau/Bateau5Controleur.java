@@ -23,12 +23,14 @@ public class Bateau5Controleur implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        // Nous faisons en sorte de decliquer puis recliquer sur les boutons pour placer
+        // Nous differencions belge et francais en limitant le nombre de bateau apr categorie
 
 
             fenetre.getBateau5().setEnabled(false);
 
             if (!fenetre.getBateau5().isSelected()) {
-                if (joueur.getFlotte().getShips(ShipCategory.DESTROYER).size() == 3) {
+                if (joueur.getFlotte().getShips(ShipCategory.DESTROYER).size() == 1) {
                     System.out.println("test");
                     fenetre.setBateauSelected(false, 1);
                     fenetre.getBateau2().setEnabled(false);

@@ -22,11 +22,9 @@ public class Bateau2Controleur implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        //if (fenetre.getBateau2().isSelected()) {
-        for(int i =0; i< 5;i++ ) {
-            System.out.println("debut" + fenetre.getBateauSelected1()[i]);
-        }
 
+        // Nous faisons en sorte de decliquer puis recliquer sur les boutons pour placer
+        // Nous differencions belge et francais en limitant le nombre de bateau apr categorie
     if(menu.getBe().isSelected()) {
         fenetre.getBateau2().setEnabled(false);
 
