@@ -71,11 +71,13 @@ public class JeuImageComponent extends JComponent {
                 } else if (serv_response == 100) {
                     System.out.println("WIN");
                     Fin fin = new Fin("WIN", serv_response);
+                    fin.pack();
                     fin.setVisible(true);
                     fenetre.dispose();
                 } else if (serv_response == -100){
                     System.out.println("PERDU");
                     Fin fin = new Fin("PERDU", serv_response);
+                    fin.pack();
                     fin.setVisible(true);
                     fenetre.dispose();
                 } else if (serv_response == -10){
