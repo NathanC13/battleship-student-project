@@ -21,6 +21,7 @@ public class ImageShowingComponent extends JComponent {
     private int type;
     private Joueur joueur;
     private Ship boat;
+    private Ship boat2;
     private int nb_sub;
     private MenuPrincipal menu;
 
@@ -49,6 +50,8 @@ public class ImageShowingComponent extends JComponent {
 
             String a = null;
             String b = null;
+            String c = "H10";
+            String d = "J10";
 
             if (fenetre.getVertical().isSelected()) {
                 a = (Character.toString((char) id[1] + 65) + ((id[0] + 1)));
@@ -90,6 +93,9 @@ public class ImageShowingComponent extends JComponent {
                     try {
                         boat = new Cruiser("cruiser" + a +"" +b, a,b);
                         test = 2;
+                        if(menu.getFr().isSelected()){
+                            test = 3;
+                        }
                     } catch (BadCoordException | CoordsBadShipException badCoordException) {
                         badCoordException.printStackTrace();
                     }

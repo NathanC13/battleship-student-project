@@ -64,7 +64,7 @@ public class Bateau4Controleur implements ActionListener {
             } else {
                 fenetre.getBateau2().setEnabled(true);
             }
-            if (joueur.getFlotte().getShips(ShipCategory.CRUISER).size() == 2) {
+            if (joueur.getFlotte().getShips(ShipCategory.CRUISER).size() == 3) {
                 fenetre.setBateauSelected(false, 2);
                 fenetre.getBateau3().setEnabled(false);
             } else {
