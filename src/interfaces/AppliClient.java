@@ -59,7 +59,7 @@ public class AppliClient {
 
 
         Plateau plateau = new Plateau("BattleShip Beeyard Edition© - Jeu en cours ", positionnementBateau, serveurChoix, playGameControleur);
-
+        //
 
         BackControleur backControleur = new BackControleur(settings);
         settings.fixeListenerBack(backControleur);
