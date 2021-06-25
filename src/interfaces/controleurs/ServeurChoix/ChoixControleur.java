@@ -35,7 +35,7 @@ public class ChoixControleur implements ActionListener {
     private Player p;
     private PlayGameControleur playGameControleur;
     private CreationServeurControleur creationServeurControleur;
-    private Game game;
+    private static Game game;
 
 
     public ChoixControleur(ServeurChoix serveurChoix, Plateau plateau, PositionnementBateau positionnementBateau, PlayGameControleur playGameControleur, CreationServeurControleur creationServeurControleur){

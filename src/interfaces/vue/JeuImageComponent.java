@@ -31,10 +31,19 @@ public class JeuImageComponent extends JComponent {
     private Joueur joueur;
     private Game game;
     private PlayGameControleur playGameControleur;
+    private ServeurChoix serveurChoix;
+    private PositionnementBateau positionnementBateau;
 
     private MouseListener listener = new MouseAdapter() {
         public void mouseClicked(MouseEvent e) {
             System.out.println("id: " + id[0] + " " +id[1]);
+
+            ChoixControleur choixControleur = new ChoixControleur(serveurChoix, fenetre, positionnementBateau, playGameControleur, null);
+
+            game = choixControleur.getGame();
+
+
+            System.out.println("GAME: " + game);
 
 
             try {
@@ -44,8 +53,10 @@ public class JeuImageComponent extends JComponent {
                     int tour_response = Network.playOneTurn("http://37.187.38.219/api/v0", game, playGameControleur.getP(), new Coord(Character.toString((char) id[1] + 65) + ((id[0] + 1))));
                     if (tour_response==1){
                         img = ImageIO.read(new File("./img/case_bateau_touche.png"));
+                        System.out.println("touche");
                     } else  if (tour_response==10){
                         img = ImageIO.read(new File("./img/case_bateau_coule.png"));
+                        System.out.println("Coulé");
                     } else if (tour_response==0){
                         System.out.println("Raté");
                     } else{
@@ -67,33 +78,8 @@ public class JeuImageComponent extends JComponent {
         this.fenetre = fenetre;
         this.joueur = positionnementBateau.getJoueur();
         this.playGameControleur = playGameControleur;
-
-
-
-        int[] listID = serveurChoix.getId();
-        ArrayList<JRadioButton> listRadio = serveurChoix.getArray();
-
-        int idGame = 0;
-
-
-        for (int i=0; i<listID.length; i++){
-            if (listRadio.get(i).isSelected()){
-                idGame = listID[i];
-            }
-        }
-
-
-        try {
-            List<Game> listGames = Network.listInitializedGames("http://37.187.38.219/api/v0");
-
-            for (int a = 0; a < listGames.size(); a++){
-                if (listGames.get(a).getId()==idGame){
-                    game = listGames.get(a);
-                }
-            }
-        } catch (UnirestException unirestException) {
-            unirestException.printStackTrace();
-        }
+        this.serveurChoix = serveurChoix;
+        this.positionnementBateau = positionnementBateau;
 
 
 
