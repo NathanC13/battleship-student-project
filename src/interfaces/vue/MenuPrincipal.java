@@ -49,11 +49,11 @@ public class MenuPrincipal extends JFrame {
         JLabel label1 = new JLabel("Bienvenue dans la bataille navale - BeeYard Edition");
 
         // boutons pour la sélection du style de jeu
-        fr = new JRadioButton("Français", true);
-        be = new JRadioButton("Belge");
+        fr = new JRadioButton("Français");
+        be = new JRadioButton("Belge",true);
         ButtonGroup group = new ButtonGroup();
-        group.add(fr);
         group.add(be);
+        group.add(fr);
 
         // Ajout des composants aux différents panels
         panel5.add(label1);

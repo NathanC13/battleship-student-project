@@ -16,5 +16,6 @@ public class QuitterControleur implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         this.fenetre.dispose();
+        System.exit(-1);
     }
 }

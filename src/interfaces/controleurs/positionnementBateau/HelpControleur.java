@@ -20,7 +20,7 @@ public class HelpControleur implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         JFrame frame = new JFrame("Informations de jeu");
-        String message = "Le bouton Settings vous permet d'accéder aux paramètres du jeu.\n\nLes boutons représentants les bateaux doivent être sélectionnées\npour pouvoir positionner les bateaux.\n\nLe bouton Clear vous permet d'effacer le placement de vos bateaux afin de recommencer.\n\nUne fois vos bateaux placés, vous pouvez cliquer sur le bouton JOUER qui vous permettra de lancer une partie sur le serveur.";
+        String message = "Le bouton Settings vous permet d'accéder aux paramètres du jeu.\n\nLes boutons représentants les bateaux doivent être sélectionnées\npour pouvoir positionner les bateaux.\n\nLe bouton Clear vous permet d'effacer le placement de vos bateaux afin de recommencer.\n\nUne fois vos bateaux placés, vous pouvez cliquer sur le bouton CONTINUER qui vous permettra de lancer une partie sur le serveur.";
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         JOptionPane.showMessageDialog(frame, message, "Help", JOptionPane.INFORMATION_MESSAGE);
 
