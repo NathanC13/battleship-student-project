@@ -61,7 +61,7 @@ public class AppliClient {
 
         BackControleur backControleur = new BackControleur(settings);
         settings.fixeListenerBack(backControleur);
-        RestartControleur restartControleur = new RestartControleur(settings);
+        RestartControleur restartControleur = new RestartControleur(settings, positionnementBateau, plateau);
         settings.fixeListenerRestart(restartControleur);
         QuitterSettingsControleur quitterSettingsControleur = new QuitterSettingsControleur(settings, positionnementBateau, CreerOuRejoindre, plateau, serveurChoix, fenetre);
         settings.fixeListenerQuitter(quitterSettingsControleur);
