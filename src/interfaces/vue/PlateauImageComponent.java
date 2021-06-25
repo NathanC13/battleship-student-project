@@ -23,9 +23,6 @@ public class PlateauImageComponent extends JComponent {
     private MouseListener listener = new MouseAdapter() {
         public void mouseClicked(MouseEvent e) {
             System.out.println("id: " + id[0] + " " +id[1]);
-
-
-
         }
     };
 
@@ -41,17 +38,11 @@ public class PlateauImageComponent extends JComponent {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-
-
     }
-
     public void paintComponent(Graphics g) {
         g.drawImage(img, 0, 0, null);
     }
 
-    // This method override will tell the LayoutManager how large this component
-    // should be. We'll want to make this component the same size as the `img`.
     public Dimension getPreferredSize() {
         return new Dimension(img.getWidth(null), img.getHeight(null));
     }
