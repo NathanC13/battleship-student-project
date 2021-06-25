@@ -42,6 +42,11 @@ public class JeuImageComponent extends JComponent {
 
             game = choixControleur.getGame();
 
+            if (game == null){
+                CreationServeurControleur creationServeurControleur = new CreationServeurControleur(null,null,null,null);
+                game = creationServeurControleur.getGame();
+            }
+
 
             System.out.println("GAME: " + game);
 
@@ -62,11 +67,17 @@ public class JeuImageComponent extends JComponent {
                     } else{
                         System.out.println("reponse serveur : " + tour_response);
                     }
+                } else if (serv_response == -10){
+                    System.out.println("Ce n'est pas votre tour");
                 }
 
             } catch (UnirestException | BadIdException | BadCoordException | IOException unirestException) {
                 unirestException.printStackTrace();
             }
+
+            fenetre.invalidate(); //actualise la fenetre
+            fenetre.validate();
+            fenetre.repaint();
 
 
         }

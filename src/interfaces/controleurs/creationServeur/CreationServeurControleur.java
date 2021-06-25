@@ -30,7 +30,7 @@ public class CreationServeurControleur implements ActionListener {
     private PositionnementBateau positionnementBateau;
     private Joueur joueur;
     private PlayGameControleur playGameControleur;
-    private Game game;
+    private static Game game;
 
     public CreationServeurControleur(CreationServeur creationServeur, Plateau plateau, PositionnementBateau positionnementBateau, PlayGameControleur playGameControleur){
 
