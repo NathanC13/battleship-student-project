@@ -6,7 +6,7 @@
 BeeYard fait référence aux nombreux projets de notre groupe, que l'on considère comme notre signature.
 
 ## Présentation rapide 
-Nous avions à coeurs de créer notre propre identité visuelle à travers différents éléments comme le logo, les bateaux, le plateau mais surtout grâce à ce trailer ci-dessous (de notre propre industrie) : [ https://youtu.be/4yDK0fpvun8 : BATTLESHIP BeeYard Edition TRAILER 2021 ]  
+Nous avions à coeur de créer notre propre identité visuelle à travers différents éléments comme le logo, les bateaux, le plateau mais surtout grâce à ce trailer ci-dessous (de notre propre industrie) : [ https://youtu.be/4yDK0fpvun8 : BATTLESHIP BeeYard Edition TRAILER 2021 ]  
 [Source : trailer world of warship]
 ## Menu
 ![](img/Menu.png)
